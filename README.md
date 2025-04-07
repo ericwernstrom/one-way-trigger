@@ -1,2 +1,1 @@
-# linkers-summer-game
-Summer 2024 project
+Repo for the game One Way Trigger
