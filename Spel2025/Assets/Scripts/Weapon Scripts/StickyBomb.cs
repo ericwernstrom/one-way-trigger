@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StickyBomb : MonoBehaviour
 {
-    public float explosionDelay = 2f; // Time delay before explosion
+    public float explosionDelay = 1.0f; // Time delay before explosion
     public GameObject explosionPrefab; // Prefab for explosion effect
     public GameObject explosion_hitbox;
     public float explosionScale = 1.0f; // Scale of the explosion area
@@ -21,8 +21,9 @@ public class StickyBomb : MonoBehaviour
 
         originalScale = transform.localScale;
 
-        // Start countdown for explosion
+        // Start timer for explosion
         Invoke("Explode", explosionDelay);
+
     }
 
     void Explode()
@@ -30,6 +31,9 @@ public class StickyBomb : MonoBehaviour
         if (!hasExploded)
         {
             hasExploded = true;
+
+            // Explosion prefab
+            Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
 
             // Apply damage to nearby objects or enemies
             ApplyExplosionDamage();
@@ -52,8 +56,9 @@ public class StickyBomb : MonoBehaviour
         if (!isStuck)
         {
             isStuck = true;
+
             /*
-            //Borde fungera men blir konstigt med scalen på bomben
+            //Borde fungera men blir konstigt med scalen p? bomben
             isStuck = true;
 
             // Store the original scale
@@ -69,7 +74,7 @@ public class StickyBomb : MonoBehaviour
             // Reset the local scale to maintain the original size
             transform.localScale = originalScale;
             */
-            
+
             if (collision.rigidbody)
             {
                 // Add a HingeJoint component to the gameobject that has the script

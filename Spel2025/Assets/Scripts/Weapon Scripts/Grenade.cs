@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
-    public float explosionDelay = 2f; // Time delay before explosion
+    public float explosionDelay = 1.6f; // Time delay before explosion
     public GameObject explosionPrefab; // Prefab for explosion effect
     public GameObject explosion_hitbox;
     public float explosionScale = 1.0f; //Scale of the explosion area
@@ -24,8 +24,7 @@ public class Grenade : MonoBehaviour
             hasExploded = true;
 
             // Instantiate explosion effect
-            //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
+            Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
             // Apply damage to nearby objects or enemies
             ApplyExplosionDamage();
 
