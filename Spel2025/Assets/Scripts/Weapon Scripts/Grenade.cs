@@ -24,7 +24,11 @@ public class Grenade : MonoBehaviour
             hasExploded = true;
 
             // Instantiate explosion effect
-            Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            explosion.transform.localScale = Vector3.one * explosionScale;
+
+            Destroy(explosion, 1.5f);
+
             // Apply damage to nearby objects or enemies
             ApplyExplosionDamage();
 

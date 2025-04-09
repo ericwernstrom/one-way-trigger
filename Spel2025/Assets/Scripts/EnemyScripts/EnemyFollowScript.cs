@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyFollowScript : MonoBehaviour
 {
     private Transform target;
-    public float speed; 
+    public float speed;
+    public float damage = 20f; //Kanske kan vara i ett annat script men kan nog vara här
     // Start is called before the first frame update
     void Start()
     {

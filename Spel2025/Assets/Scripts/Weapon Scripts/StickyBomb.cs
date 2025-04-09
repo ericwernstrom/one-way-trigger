@@ -33,7 +33,8 @@ public class StickyBomb : MonoBehaviour
             hasExploded = true;
 
             // Explosion prefab
-            Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            explosion.transform.localScale = Vector3.one * explosionScale;
 
             // Apply damage to nearby objects or enemies
             ApplyExplosionDamage();
@@ -56,24 +57,6 @@ public class StickyBomb : MonoBehaviour
         if (!isStuck)
         {
             isStuck = true;
-
-            /*
-            //Borde fungera men blir konstigt med scalen p? bomben
-            isStuck = true;
-
-            // Store the original scale
-            Vector3 originalScale = transform.localScale;
-
-            // Set the parent
-            transform.SetParent(collision.contacts[0].otherCollider.transform);
-
-            if (rb != null)
-            {
-                rb.isKinematic = true;
-            }
-            // Reset the local scale to maintain the original size
-            transform.localScale = originalScale;
-            */
 
             if (collision.rigidbody)
             {
