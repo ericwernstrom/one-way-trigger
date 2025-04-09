@@ -17,6 +17,7 @@ public class PickupAttractorScript : MonoBehaviour
         }
     }
 
+    /*
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Pickup"))
@@ -26,6 +27,7 @@ public class PickupAttractorScript : MonoBehaviour
                 attractedPickups.Remove(rb);
         }
     }
+    */
 
     private void FixedUpdate()
     {
