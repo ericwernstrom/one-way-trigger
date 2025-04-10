@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5585841508643162970}
   m_Layer: 0
   m_Name: Track_projectile
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4466370988367200537}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 250
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ec3eb7bcf80b74f8bfb163d09c749a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 25
   trackingDelay: 1
-  turnSpeed: 4
+  turnSpeed: 5
   explosion_prefab: {fileID: 3566023107158436449, guid: 23f0212f228f84d2b8aef9a2cafc35a3, type: 3}
   explosion_hitbox: {fileID: 6522417450078717207, guid: 71c10a0304ff9124192748bb09de519e, type: 3}
   explosionScale: 7
