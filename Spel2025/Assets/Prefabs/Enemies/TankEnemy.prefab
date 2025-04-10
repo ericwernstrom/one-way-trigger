@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 692826413106694412}
   - component: {fileID: 1033917599136627421}
   - component: {fileID: 8475804381445070716}
+  - component: {fileID: -8530609947582680394}
   m_Layer: 0
   m_Name: TankEnemy
   m_TagString: Enemy
@@ -113,6 +114,21 @@ CapsuleCollider:
   m_Height: 6.021983
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-8530609947582680394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4720223978451346312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095371e8bedaa464194698cda2a90a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XPOrbPrefab: {fileID: 697992805664400322, guid: 6013d6e1e6c371c4faaab664f5877b9b, type: 3}
+  xpAmount: 10
+  numberOfOrbs: 1
 --- !u!1 &6526269781123885204
 GameObject:
   m_ObjectHideFlags: 0

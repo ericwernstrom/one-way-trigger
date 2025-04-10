@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6867502233330622025}
   - component: {fileID: 3170135414614392296}
   - component: {fileID: 2359316514293352022}
+  - component: {fileID: -8224765235911317565}
   m_Layer: 0
   m_Name: NormalEnemy
   m_TagString: Enemy
@@ -89,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  damage: 20
 --- !u!136 &2359316514293352022
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -112,6 +114,21 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8224765235911317565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3673018008811403737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095371e8bedaa464194698cda2a90a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XPOrbPrefab: {fileID: 697992805664400322, guid: 6013d6e1e6c371c4faaab664f5877b9b, type: 3}
+  xpAmount: 10
+  numberOfOrbs: 1
 --- !u!1 &4945018445410639826
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,6 +47,11 @@ public class Health : MonoBehaviour
     // Method to handle enemy death
     void Die()
     {
+        XPDropper dropper = GetComponent<XPDropper>();
+        if (dropper != null)
+        {
+            dropper.DropXP();
+        }
         // You can add any death effects here like playing a sound or animation
         Destroy(gameObject); // Destroy the enemy gameObject
     }

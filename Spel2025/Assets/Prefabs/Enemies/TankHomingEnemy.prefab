@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 5619818720530100095}
   - component: {fileID: 8339629562336244507}
   - component: {fileID: 8422749166751528649}
+  - component: {fileID: 6070269412541469975}
   m_Layer: 0
   m_Name: TankHomingEnemy
   m_TagString: Enemy
@@ -175,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  damage: 20
 --- !u!136 &8422749166751528649
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -198,6 +200,21 @@ CapsuleCollider:
   m_Height: 6.021983
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6070269412541469975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666100087313850389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095371e8bedaa464194698cda2a90a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XPOrbPrefab: {fileID: 697992805664400322, guid: 6013d6e1e6c371c4faaab664f5877b9b, type: 3}
+  xpAmount: 10
+  numberOfOrbs: 1
 --- !u!1001 &455811137588424968
 PrefabInstance:
   m_ObjectHideFlags: 0

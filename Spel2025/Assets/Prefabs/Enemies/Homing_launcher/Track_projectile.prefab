@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 677166070263231092}
   - component: {fileID: 296135498214625385}
   - component: {fileID: 5585841508643162970}
+  - component: {fileID: -4580686722332356073}
   m_Layer: 0
   m_Name: Track_projectile
   m_TagString: Enemy
@@ -115,6 +116,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+--- !u!114 &-4580686722332356073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466370988367200537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095371e8bedaa464194698cda2a90a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XPOrbPrefab: {fileID: 697992805664400322, guid: 6013d6e1e6c371c4faaab664f5877b9b, type: 3}
+  xpAmount: 10
+  numberOfOrbs: 1
 --- !u!1001 &6995015959647061805
 PrefabInstance:
   m_ObjectHideFlags: 0
