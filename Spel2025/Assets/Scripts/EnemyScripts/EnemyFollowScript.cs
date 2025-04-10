@@ -18,7 +18,7 @@ public class EnemyFollowScript : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
-        // Make the enemy look at the player (only on the Y axis)
+        // Make the enemy look at the player
         Vector3 direction = target.position - transform.position;
         if (direction != Vector3.zero)
         {
