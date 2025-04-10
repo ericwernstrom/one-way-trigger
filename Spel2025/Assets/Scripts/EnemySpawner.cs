@@ -12,7 +12,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private float spawnInterval = 3f;
     [SerializeField]
-    private float spawnArea = 10f;    
+    private float spawnDistance = 10f;
+    [SerializeField]
+    private float spawnHeight = 1;
     void Start()
     {
         StartCoroutine(SpawnEnemies());
@@ -25,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
             
             yield return new WaitForSeconds(spawnInterval);
             // Generate new random position to spawn 
-            Vector3 spawnOffset = new Vector3(Random.Range(-10, 11), 2, Random.Range(-10, 11));
+            Vector3 spawnOffset = new Vector3(Random.Range(- spawnDistance, spawnDistance + 1), spawnHeight, Random.Range( - spawnDistance, spawnDistance + 1));
             Instantiate(EnemyPrefab, transform.position + spawnOffset, Quaternion.identity);
         }
                 
