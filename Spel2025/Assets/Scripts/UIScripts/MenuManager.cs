@@ -8,6 +8,6 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Hejsan");
-        SceneManager.LoadScene("Demo_Banan");
+        SceneManager.LoadScene("FourthDemoScene");
     }
 }
