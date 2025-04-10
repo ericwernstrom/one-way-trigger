@@ -145,7 +145,9 @@ public class KaninScript : MonoBehaviour
     {
         if (Time.time > nextFireTimeMainWeapon)
         {
-            Instantiate(projectilePrefab, firePointMainWeapon.position, firePointMainWeapon.rotation);
+            Vector3 direction = (player.transform.position - firePointMainWeapon.position).normalized;
+            Quaternion rotation = Quaternion.LookRotation(direction); // For 3D
+            Instantiate(projectilePrefab, firePointMainWeapon.position, rotation);
             nextFireTimeMainWeapon = Time.time + (1f / fireRateMainWeapon);
             
         }
