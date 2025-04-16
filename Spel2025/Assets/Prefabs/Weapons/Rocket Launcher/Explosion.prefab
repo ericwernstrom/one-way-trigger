@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c008bd2e355403ca6f31aa7290720c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instantiationInterval: 0.08
-  max_scale: 1.8
-  scale_modifier: 0.4
-  linger_time: 0.05
+  instantiationInterval: 0.02
+  max_scale: 2
+  scale_modifier: 0.08
+  linger_time: 0.02

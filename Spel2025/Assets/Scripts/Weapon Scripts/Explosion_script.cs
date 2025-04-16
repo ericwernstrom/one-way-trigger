@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Explosion_script : MonoBehaviour
 {
+    
     private float timer = 0.0f;
-    public float instantiationInterval; // Set this to the desired interval between instantiations
-    public float max_scale;
-    public float scale_modifier;
-
-    public float linger_time;
+    [SerializeField]
+    private float instantiationInterval; // Set this to the desired interval between instantiations
+    [SerializeField]
+    private float max_scale;
+    [SerializeField]
+    private float scale_modifier;
+    [SerializeField]
+    private float linger_time;
 
     
 
