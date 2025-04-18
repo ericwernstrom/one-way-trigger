@@ -45,7 +45,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3673018008811403737}
   serializedVersion: 4
-  m_Mass: 20
+  m_Mass: 250
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   damage: 20
+  stunDuration: 2
 --- !u!136 &2359316514293352022
 CapsuleCollider:
   m_ObjectHideFlags: 0

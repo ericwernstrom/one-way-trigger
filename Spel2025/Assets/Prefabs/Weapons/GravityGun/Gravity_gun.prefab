@@ -81,8 +81,8 @@ MonoBehaviour:
   - {fileID: 3429741208741620962, guid: dd6c7b2c4ed0246e58ba9acc882f6887, type: 3}
   rate_of_fire: 0.1
   size_of_projectile: 0
-  speed_of_projectile: 20
-  lifetime_of_projectile: 0
+  speed_of_projectile: 15
+  lifetime_of_projectile: 6
   upward_force: 0
 --- !u!1 &8195519294230078744
 GameObject:
