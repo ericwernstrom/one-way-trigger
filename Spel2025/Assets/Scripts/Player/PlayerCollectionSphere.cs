@@ -8,10 +8,10 @@ public class PlayerCollectionSphere : MonoBehaviour
     {
         if (other.CompareTag("Pickup"))
         {
-            XPOrb experience_orb = other.GetComponent<XPOrb>();
-            if (experience_orb != null)
+            XPOrb orb = other.GetComponent<XPOrb>();
+            if (orb != null)
             {
-                experience_orb.Collect();
+                orb.Collect();
             }
         }
     }
