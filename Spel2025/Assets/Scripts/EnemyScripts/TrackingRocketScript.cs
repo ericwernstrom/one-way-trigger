@@ -11,10 +11,16 @@ public class TrackingRocketScript : MonoBehaviour
     private Rigidbody rb;
     public float turnSpeed = 1f; // Controls how quickly the rocket can turn
 
+    //Explosion variables
     public GameObject explosion_prefab;
     public GameObject explosion_hitbox;
     public float explosionScale;
 
+    //Stun variables (maybe remove if these are supposed to be projectiles)
+    //Stun variables
+    private bool isStunned = false;
+    private float stunTimer = 0f;
+    public float stunDuration = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +37,18 @@ public class TrackingRocketScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Stun from stun_hitbox prefab
+        if (isStunned)
+        {
+            stunTimer -= Time.deltaTime;
+            if (stunTimer <= 0f)
+            {
+                isStunned = false;
+                // Resume behavior
+            }
+            return;
+        }
+
         if (isTracking)
         {
             TrackTarget();
@@ -84,6 +102,14 @@ public class TrackingRocketScript : MonoBehaviour
 
         // Destroy the rocket upon collision
         Destroy(gameObject);
+    }
+
+    //Stun function
+    public void Stun(float duration)
+    {
+        isStunned = true;
+        stunTimer = duration;
+        // Optionally: Stop navmesh, animations, etc.
     }
 
 

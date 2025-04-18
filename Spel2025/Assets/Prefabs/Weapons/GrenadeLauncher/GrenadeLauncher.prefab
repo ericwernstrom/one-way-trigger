@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile_prefabs:
+  - {fileID: 8021431820019265327, guid: c091ccfa0de0041189910ad0f88ee927, type: 3}
   - {fileID: 2552514823303913206, guid: 92e8251a2bd227d4aa3f0227f7161392, type: 3}
   - {fileID: 7836492085163549441, guid: a81d5f1b96c92de4db1e6889f850b30f, type: 3}
   rate_of_fire: 0
