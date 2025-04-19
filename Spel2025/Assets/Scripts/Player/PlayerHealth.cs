@@ -12,9 +12,12 @@ using TMPro;
 /// </summary>
 public class PlayerHealth : MonoBehaviour
 {
-    public int health = 100; // Enemy's starting health
-    public int rocket_damage = 10;
-    public HealthBar HealthBar;
+    [SerializeField]
+    private int health = 100; // Enemy's starting health
+    [SerializeField]
+    private int rocket_damage = 10;
+    [SerializeField]
+    private HealthBar HealthBar;
 
     // This method is called when another collider enters the trigger collider
     

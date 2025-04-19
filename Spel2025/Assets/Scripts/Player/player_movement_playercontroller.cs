@@ -8,14 +8,22 @@ public class PlayerMove_with_playercontroller : MonoBehaviour
 
     CharacterController Controller;
 
-    public float Speed;
-    public float gravity;
-    public float jump_power;
-    public float jump_power_held;
-    public float jump_max_time;
-    public float coyote_time;
-    public float jump_input_buffer;
-    public Transform Cam;
+    [SerializeField]
+    private float Speed;
+    [SerializeField]
+    private float gravity;
+    [SerializeField]
+    private float jump_power;
+    [SerializeField]
+    private float jump_power_held;
+    [SerializeField]
+    private float jump_max_time;
+    [SerializeField]
+    private float coyote_time;
+    [SerializeField]
+    private float jump_input_buffer;
+    [SerializeField]
+    private Transform Cam;
 
     Vector3 Movement = Vector3.zero;
     private bool cant_jump = false;

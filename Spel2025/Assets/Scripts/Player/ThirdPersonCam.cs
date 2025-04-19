@@ -6,16 +6,25 @@ using Cinemachine;
 
 public class ThirdPersonCam : MonoBehaviour
 {
-    public Transform orientation;
-    public Transform player;
-    public Transform playerObj;
-    public float rotationSpeed;
-    public bool isInCombat = false;
-    public bool isAiming = false;
-    public CinemachineFreeLook NormalCam;
+    [SerializeField]
+    private Transform orientation;
+    [SerializeField]
+    private Transform player;
+    [SerializeField]
+    private Transform playerObj;
+    [SerializeField]
+    private float rotationSpeed;
+    [SerializeField]
+    private bool isInCombat = false;
+    [SerializeField]
+    private bool isAiming = false;
+    [SerializeField]
+    private CinemachineFreeLook NormalCam;
     
-    public float zoomedIn = 80f;
-    public float zoomedOut = 100f;
+    [SerializeField]
+    private float zoomedIn = 80f;
+    [SerializeField]
+    private float zoomedOut = 100f;
     
     // public CinemachineFreeLook CombatCam;
     void Start()

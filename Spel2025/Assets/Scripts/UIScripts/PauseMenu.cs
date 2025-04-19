@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GamePaused = false;
-
-    public GameObject pauseMenuUI;
+    [SerializeField]
+    private static bool GamePaused = false;
+    [SerializeField]
+    private GameObject pauseMenuUI;
 
     // Update is called once per frame
     void Update()

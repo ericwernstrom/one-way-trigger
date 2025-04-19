@@ -7,15 +7,24 @@ using UnityEngine.UIElements;
 public class player_movement_rigidbody : MonoBehaviour
 {
 
-    public float Speed;
-    public float gravity;
-    public float jump_power;
-    public float jump_power_held;
-    public float coyote_time;
-    public float jump_input_buffer;
-    public float player_height;
-    public float friction;
-    public Transform Cam;
+    [SerializeField]
+    private float Speed;
+    [SerializeField]
+    private float gravity;
+    [SerializeField]
+    private float jump_power;
+    [SerializeField]
+    private float jump_power_held;
+    [SerializeField]
+    private float coyote_time;
+    [SerializeField]
+    private float jump_input_buffer;
+    [SerializeField]
+    private float player_height;
+    [SerializeField]
+    private float friction;
+    [SerializeField]
+    private Transform Cam;
     private Rigidbody rb;
 
     Vector3 Movement = Vector3.zero;

@@ -8,21 +8,27 @@ public class PlayerMove : MonoBehaviour
     Rigidbody rb;
 
     [Header("Movement Options")]
-    public float Speed;
-    public float jumpForce;
+    [SerializeField]
+    private float Speed;
+    [SerializeField]
+    private float jumpForce;
     float Horizontal;
     float Vertical;
     float JumpInput;
 
     [Header("Ground Check")]
-    public LayerMask groundLayer;
-    public float groundDrag;
-    public float airDrag;
-    public float playerHeight;
+    [SerializeField]
+    private LayerMask groundLayer;
+    [SerializeField]
+    private float groundDrag;
+    [SerializeField]
+    private float airDrag;
+    [SerializeField]
+    private float playerHeight;
     bool grounded;
 
-
-    public Transform orientation;
+    [SerializeField]
+    private Transform orientation;
 
     Vector3 direction;
 

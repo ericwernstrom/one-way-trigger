@@ -8,21 +8,28 @@ public class CameraMove : MonoBehaviour
     private const float YMin = -50.0f;
     private const float YMax = 50.0f;
 
-    public Transform lookAt;
+    [SerializeField]
+    private Transform lookAt;
 
-    public Transform Player;
+    [SerializeField]
+    private Transform Player;
 
-    public float distance = 10.0f;
+    [SerializeField]
+    private float distance = 10.0f;
     private float currentX = 0.0f;
     private float currentY = 0.0f;
-    public float sensivity = 4.0f;
+    [SerializeField]
+    private float sensivity = 4.0f;
 
     // zoom settings
     float current_fieldOfView;
-    public float min_fieldOfView;
-    public float max_fieldOfView;
+    [SerializeField]
+    private float min_fieldOfView;
+    [SerializeField]
+    private float max_fieldOfView;
     float current_cameraOffset = 0.0f;
-    public float max_cameraOffset = 5.0f;
+    [SerializeField]
+    private float max_cameraOffset = 5.0f;
 
 
     // Start is called before the first frame update
@@ -32,7 +39,7 @@ public class CameraMove : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         current_fieldOfView = max_fieldOfView;
-}
+    }
 
     // Update is called once per frame
     void LateUpdate()

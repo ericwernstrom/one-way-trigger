@@ -7,11 +7,15 @@ public class NewBehaviourScript : MonoBehaviour
 
     CharacterController Controller;
 
-    public float Speed;
-    public float gravity;
-    public float jump_power;
+    [SerializeField]
+    private float Speed;
+    [SerializeField]
+    private float gravity;
+    [SerializeField]
+    private float jump_power;
 
-    public Transform Cam;
+    [SerializeField]
+    private Transform Cam;
     Vector3 Movement = Vector3.zero;
     // Start is called before the first frame update
     void Start()

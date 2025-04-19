@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PickupAttractor : MonoBehaviour
 {
-    public Transform player; // Assign in Inspector or set in Start()
+    [SerializeField]
+    private Transform player; // Assign in Inspector or set in Start()
 
     private void Start()
     {

@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int currentXP = 0;
-    public int level = 1;
+    [SerializeField]
+    private int currentXP = 0;
+    [SerializeField]
+    private int level = 1;
 
     public void AddXP(int amount)
     {
