@@ -8,7 +8,11 @@ public class GravityBullet_script : MonoBehaviour
     readonly float G = 40f;
     GameObject[] enemies;
 
-    public float damage = 20f;
+    [SerializeField]
+    private GameObject hit_particles;
+
+    [SerializeField]
+    private float damage = 20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +85,8 @@ public class GravityBullet_script : MonoBehaviour
             health.TakeDamage(damage);
         }
 
+        // Spawns Particles
+        GameObject particles = (GameObject)Instantiate(hit_particles, transform.position, hit_particles.transform.rotation);
         // Destroy the bullet
         Destroy(gameObject);
 

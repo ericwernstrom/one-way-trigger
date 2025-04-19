@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class Rocket_script : MonoBehaviour
 {
-    public float damage = 40f;
-    public GameObject explosion_prefab;
-    public GameObject explosion_hitbox;
-    public GameObject smoke_trail;
-    public GameObject aftermath;
-    public float explosionScale;
-
-    public float rotation_speed;
+    [SerializeField]
+    private float damage = 40f;
+    
+    [SerializeField]
+    private GameObject explosion_prefab;
+    [SerializeField]
+    private GameObject explosion_hitbox;
+    [SerializeField]
+    private GameObject smoke_trail;
+    [SerializeField]
+    private GameObject aftermath;
+    [SerializeField]
+    private float explosionScale;
+    [SerializeField]
+    private float rotation_speed;
     
 
 
