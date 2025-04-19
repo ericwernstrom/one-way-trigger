@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class XPOrb : MonoBehaviour
 {
-    public int xpAmount = 10;
+    [SerializeField]
+    private int xpAmount = 10;
 
-    public float moveSpeed = 2.0f;
-    public float maxSpeed = 10.0f;
-    public float acceleration = 3.0f;
+    [SerializeField]
+    private float moveSpeed = 2.0f;
+    [SerializeField]
+    private float maxSpeed = 10.0f;
+    [SerializeField]
+    private float acceleration = 3.0f;
 
     private Transform target;
     private bool isAttracted = false;
@@ -41,6 +45,11 @@ public class XPOrb : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    public ref int getXPAmount()
+    {
+        return ref xpAmount;
     }
 }
 

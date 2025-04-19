@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    public float speed = 10f; // Speed of the projectile
-    public int lifetime = 5;
+    [SerializeField]
+    private float speed = 10f; // Speed of the projectile
+    [SerializeField]
+    private int lifetime = 5;
 
     void Start(){
         Destroy(gameObject, lifetime);

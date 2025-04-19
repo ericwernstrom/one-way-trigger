@@ -9,18 +9,26 @@ using UnityEngine;
 public class LineOfSight : MonoBehaviour
 {
     // Detection and movement
-    public Transform target; // target to detect and follow
-    public Transform head;
-    public float seeRange = 12.0f; //maximum attack distance – will attack if closer than this to the enemy
+    [SerializeField]
+    private Transform target; // target to detect and follow
+    [SerializeField]
+    private Transform head;
+    [SerializeField]
+    private float seeRange = 12.0f; //maximum attack distance – will attack if closer than this to the enemy
     float shootRange = 8.0f;
-    public float keepDistance = 2.0f; //closest distance to get to enemy
-    public float rotationSpeed = 4.0f;
-    public float speed = 0.1f;
-    public float sightAngle = 60f; // field of view
+    [SerializeField]
+    private float keepDistance = 2.0f; //closest distance to get to enemy
+    [SerializeField]
+    private float rotationSpeed = 4.0f;
+    [SerializeField]
+    private float speed = 0.1f;
+    [SerializeField]
+    private float sightAngle = 60f; // field of view
     private Rigidbody enemyRb;
     // Jumping
     private float lastJumpTime;
-    public float jumpInterval = 3f; // Seconds between jump
+    [SerializeField]
+    private float jumpInterval = 3f; // Seconds between jump
 
 
     // Methods

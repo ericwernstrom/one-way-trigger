@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class CircularBeam : MonoBehaviour
 {
-    public float initial_scale;
+    [SerializeField]
+    private float initial_scale;
     private float current_scale;
-    public float final_scale;
-    public float speed;
-    public float linger_time;
+    [SerializeField]
+    private float final_scale;
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private float linger_time;
     private float timer;
-    public float cirle_height;
+    [SerializeField]
+    private float cirle_height;
 
     // Start is called before the first frame update
     void Start()

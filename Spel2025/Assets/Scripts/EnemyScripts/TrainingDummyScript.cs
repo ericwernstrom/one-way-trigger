@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TrainingDummyScript : MonoBehaviour
 {
-    public Transform walk_position_1;
-    public Transform walk_position_2;
-    public float speed;
+    [SerializeField]
+    private Transform walk_position_1;
+    [SerializeField]
+    private Transform walk_position_2;
+    [SerializeField]
+    private float speed;
 
     private Vector3 dir;
 

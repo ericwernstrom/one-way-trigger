@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class SpawnTrackingRocket : MonoBehaviour
 {
-    public GameObject rocketPrefab;
-    public float initialUpwardSpeed = 5f; // Adjust this value as needed
-    public float spawnInterval = 2f; // Time between spawns
+    [SerializeField]
+    private GameObject rocketPrefab;
+    [SerializeField]
+    private float initialUpwardSpeed = 5f; // Adjust this value as needed
+    [SerializeField]
+    private float spawnInterval = 2f; // Time between spawns
 
 
 

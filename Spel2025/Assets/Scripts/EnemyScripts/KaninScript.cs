@@ -6,22 +6,34 @@ public class KaninScript : MonoBehaviour
 {
     [Header("Behaviour & physics")]
     private bool Jumping = false;
-    public float jump_power;
-    public float AssCanon_firetime;
-    public float shoot_power;
-    public float extra_gravity;
+    [SerializeField]
+    private float jump_power;
+    [SerializeField]
+    private float AssCanon_firetime;
+    [SerializeField]
+    private float shoot_power;
+    [SerializeField]
+    private float extra_gravity;
 
     [Header("Rotation & Detection")]
-    public float rotationSpeed = 1.0f; // Set turret's rotation speed.
-    public float seeRange = 12.0f; //maximum attack distance – will attack if closer than this to the enemy
-    public float sightAngle = 60f; // field of view in degrees
+    [SerializeField]
+    private float rotationSpeed = 1.0f; // Set turret's rotation speed.
+    [SerializeField]
+    private float seeRange = 12.0f; //maximum attack distance ï¿½ will attack if closer than this to the enemy
+    [SerializeField]
+    private float sightAngle = 60f; // field of view in degrees
 
     [Header("Shooting")]
-    public float fireRateAssCanon; // Number of projectiles per second
-    public float fireRateMainWeapon;
-    public Transform firePointAssCanon; // The point from which the projectile will be fired
-    public Transform firePointMainWeapon;
-    public GameObject projectilePrefab; // The projectile that will be spawned
+    [SerializeField]
+    private float fireRateAssCanon; // Number of projectiles per second
+    [SerializeField]
+    private float fireRateMainWeapon;
+    [SerializeField]
+    private Transform firePointAssCanon; // The point from which the projectile will be fired
+    [SerializeField]
+    private Transform firePointMainWeapon;
+    [SerializeField]
+    private GameObject projectilePrefab; // The projectile that will be spawned
     GameObject player;
     private float nextFireTimeAssCanon;
     private float nextFireTimeMainWeapon;

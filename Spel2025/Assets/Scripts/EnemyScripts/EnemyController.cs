@@ -5,8 +5,10 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private Rigidbody enemyRb;
-    public float moveSpeed = 5f; // Speed of movement
-    public float jumpForce = 5f; // Force applied for jumping
+    [SerializeField]
+    private float moveSpeed = 5f; // Speed of movement
+    [SerializeField]
+    private float jumpForce = 5f; // Force applied for jumping
 
     // Start is called before the first frame update
     void Start()

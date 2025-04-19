@@ -5,22 +5,33 @@ using UnityEngine;
 public class TrackingRocketScript : MonoBehaviour
 {
     private GameObject target;
-    public float speed = 1f;
-    public float trackingDelay = 2f; // Time in seconds before the rocket starts tracking the target
+    
+    [SerializeField]
+    private float speed = 1f;
+    [SerializeField]
+    private float trackingDelay = 2f; // Time in seconds before the rocket starts tracking the target
+    [SerializeField]
+    private float turnSpeed = 1f; // Controls how quickly the rocket can turn
+
     private bool isTracking = false;
     private Rigidbody rb;
-    public float turnSpeed = 1f; // Controls how quickly the rocket can turn
+
+    
 
     //Explosion variables
-    public GameObject explosion_prefab;
-    public GameObject explosion_hitbox;
-    public float explosionScale;
+    [SerializeField]
+    private GameObject explosion_prefab;
+    [SerializeField]
+    private GameObject explosion_hitbox;
+    [SerializeField]
+    private float explosionScale;
 
     //Stun variables (maybe remove if these are supposed to be projectiles)
     //Stun variables
     private bool isStunned = false;
     private float stunTimer = 0f;
-    public float stunDuration = 2f;
+    [SerializeField]
+    private float stunDuration = 2f;
 
     // Start is called before the first frame update
     void Start()

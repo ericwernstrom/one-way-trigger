@@ -5,13 +5,17 @@ using UnityEngine;
 public class EnemyFollowScript : MonoBehaviour
 {
     private Transform target;
-    public float speed;
-    public float damage = 20f; //Kanske kan vara i ett annat script men kan nog vara här
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private float damage = 20f; //Kanske kan vara i ett annat script men kan nog vara här
 
     //Stun variables
     private bool isStunned = false;
     private float stunTimer = 0f;
-    public float stunDuration = 2f;
+    [SerializeField]
+    private float stunDuration = 2f;
+    
     // Start is called before the first frame update
     void Start()
     {

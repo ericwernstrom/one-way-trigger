@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
-    public GameObject projectilePrefab;
-    public Transform firePoint; // The point from which the projectile will be fired
-    public float fireRate; // Number of projectiles per second
+    [SerializeField]
+    private GameObject projectilePrefab;
+    [SerializeField]
+    private Transform firePoint; // The point from which the projectile will be fired
+    [SerializeField]
+    private float fireRate; // Number of projectiles per second
 
     private float nextFireTime;
 

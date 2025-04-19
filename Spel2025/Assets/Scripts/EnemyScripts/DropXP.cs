@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class XPDropper : MonoBehaviour
 {
-    public GameObject XPOrbPrefab;
-    public int xpAmount = 10;
-    public int numberOfOrbs = 1;
+    [SerializeField]
+    private GameObject XPOrbPrefab;
+    [SerializeField]
+    private int xpAmount = 10;
+    [SerializeField]
+    private int numberOfOrbs = 1;
 
     public void DropXP()
     {
@@ -24,7 +27,8 @@ public class XPDropper : MonoBehaviour
             XPOrb xp = orb.GetComponent<XPOrb>();
             if (xp != null)
             {
-                xp.xpAmount = xpAmount / numberOfOrbs;
+                
+                xp.getXPAmount() = xpAmount / numberOfOrbs;
             }
         }
     }
