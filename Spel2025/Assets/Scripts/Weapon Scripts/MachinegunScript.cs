@@ -35,14 +35,14 @@ public class MachineGunScript : MonoBehaviour
             delay -= decreaseDelay;
         }
         isFiring = true;
-        thirdPersonCam.isInCombat = true;
+        thirdPersonCam.CombatStart();
     }
 
     public void StopFiring()
     {
         delay = 0.5f;
         isFiring = false;
-        thirdPersonCam.isInCombat = false;
+        thirdPersonCam.CombatEnd();
     }
 
 

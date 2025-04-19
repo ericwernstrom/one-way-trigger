@@ -73,6 +73,28 @@ public class ThirdPersonCam : MonoBehaviour
         }
         */
     }
+    
+    public void CombatStart()
+    {
+        isInCombat = true;
+    }
+
+    public void CombatEnd()
+    {
+        isInCombat = false;
+    }
+
+    public void AimStart()
+    {
+        isAiming = true;
+    }
+
+    public void AimEnd()
+    {
+        isAiming = false;
+    }
+    
+
     /*
     private void switchCameraStyle(){
         // Switch between cameras depending on which one is currently active

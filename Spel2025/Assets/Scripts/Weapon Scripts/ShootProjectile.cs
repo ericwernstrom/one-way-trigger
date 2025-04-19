@@ -60,7 +60,12 @@ public class ShootProjectile : MonoBehaviour
         }
 
         // Update isInCombat based on fire input
-        thirdPersonCam.isInCombat = fire == 1;
+        if(fire == 1)
+        {
+            thirdPersonCam.CombatStart();
+        } else {
+            thirdPersonCam.CombatEnd();
+        }
 
         // Cycle through projectiles if right mouse button (or another button) is pressed
         if (Input.GetKeyDown(KeyCode.B))
@@ -73,7 +78,7 @@ public class ShootProjectile : MonoBehaviour
     private void Fire_projectile()
     {
 
-        thirdPersonCam.isInCombat = true;
+        thirdPersonCam.CombatStart();
         
         // Calculate direction towards the center of the screen
         Camera mainCamera = Camera.main;

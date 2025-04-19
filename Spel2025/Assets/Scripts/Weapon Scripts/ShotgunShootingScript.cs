@@ -57,14 +57,14 @@ public class ShotgunShootingScript : MonoBehaviour
             targetHealth.TakeDamage(totalDamage);
         }
 
-        thirdPersonCam.isInCombat = true;
+        thirdPersonCam.CombatStart();
         isFiring = true;
         muzzleFlash.Play();
     }
     public void StopFiring()
     {
         isFiring = false;
-        thirdPersonCam.isInCombat = false;
+        thirdPersonCam.CombatEnd();
     }
     
     void Update()

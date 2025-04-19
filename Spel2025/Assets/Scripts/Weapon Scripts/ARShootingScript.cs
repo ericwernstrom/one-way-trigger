@@ -31,13 +31,13 @@ public class ARShootingScript : MonoBehaviour
     public void StartFiring()
     {
         isFiring = true;
-        thirdPersonCam.isInCombat = true;
+        thirdPersonCam.CombatStart();
     }
 
     public void StopFiring()
     {
         isFiring = false;
-        thirdPersonCam.isInCombat = false;
+        thirdPersonCam.CombatEnd();
     }
 
 

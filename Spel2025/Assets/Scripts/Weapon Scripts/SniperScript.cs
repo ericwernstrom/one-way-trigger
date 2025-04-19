@@ -31,24 +31,24 @@ public class SniperScript : MonoBehaviour
     public void StartFiring()
     {
         isFiring = true;
-        thirdPersonCam.isInCombat = true;
+        thirdPersonCam.CombatStart();
     }
 
     public void StopFiring()
     {
         isFiring = false;
-        thirdPersonCam.isInCombat = false;
+        thirdPersonCam.CombatEnd();
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Fire2"))
         {
-            thirdPersonCam.isAiming = true;
+            thirdPersonCam.AimStart();
         }
         else if (Input.GetButtonUp("Fire2"))
         {
-            thirdPersonCam.isAiming = false;
+            thirdPersonCam.AimEnd();
         }
         // If it is time to fire shoot
         if (Time.time > lastFired + delay)
