@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class StickyBomb : MonoBehaviour
 {
-    public float explosionDelay = 1.0f; // Time delay before explosion
-    public GameObject explosionPrefab; // Prefab for explosion effect
-    public GameObject explosion_hitbox;
-    public float explosionScale = 1.0f; // Scale of the explosion area
+    [SerializeField]
+    private float explosionDelay = 1.0f; // Time delay before explosion
+    [SerializeField]
+    private GameObject explosionPrefab; // Prefab for explosion effect
+    [SerializeField]
+    private GameObject explosion_hitbox;
+    [SerializeField]
+    private float explosionScale = 1.0f; // Scale of the explosion area
 
     private bool hasExploded = false;
     private bool isStuck = false;

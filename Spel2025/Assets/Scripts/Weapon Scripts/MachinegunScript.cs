@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class MachineGunScript : MonoBehaviour
 {
-    public bool isFiring = false;
+    private bool isFiring = false;
 
     // Track/Create bullet and hit point
     [Header("Raycast")]
-    public Transform firePoint;
-    public ParticleSystem hitEffect;
-    public ParticleSystem muzzleFlash;
-    public TrailRenderer bulletTrail;
-    public float delay;
+    [SerializeField]
+    private Transform firePoint;
+    [SerializeField]
+    private ParticleSystem hitEffect;
+    [SerializeField]
+    private ParticleSystem muzzleFlash;
+    [SerializeField]
+    private TrailRenderer bulletTrail;
+    [SerializeField]
+    private float delay;
     private float decreaseDelay = 0.05f;	
     private float lastFired;
     private ThirdPersonCam thirdPersonCam;

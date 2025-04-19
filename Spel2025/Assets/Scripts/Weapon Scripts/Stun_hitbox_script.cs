@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Stun_hitbox_script : MonoBehaviour
 {
-    public float stunDuration = 2f;
+    [SerializeField]
+    private float stunDuration = 2f;
 
     void Start()
     {

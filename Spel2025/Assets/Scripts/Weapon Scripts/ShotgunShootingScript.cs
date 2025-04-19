@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class ShotgunShootingScript : MonoBehaviour
 {
-    public bool isFiring = false;
+    private bool isFiring = false;
 
     // Track/Create bullet and hit point
-    public Transform firePoint;
-    public ParticleSystem hitEffect;
-    public ParticleSystem muzzleFlash;
-    public TrailRenderer bulletTrail;
+    [SerializeField]
+    private Transform firePoint;
+    [SerializeField]
+    private ParticleSystem hitEffect;
+    [SerializeField]
+    private ParticleSystem muzzleFlash;
+    [SerializeField]
+    private TrailRenderer bulletTrail;
     float maxRange = 1000f;
     private ThirdPersonCam thirdPersonCam;
     Ray ray;
     RaycastHit hit;
-    public float damage = 5f;
+    [SerializeField]
+    private float damage = 5f;
     // Layer mask to ignore certain layers (mainly the player layer)
     private LayerMask ignoreLayerMask;
 

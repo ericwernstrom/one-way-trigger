@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class SniperScript : MonoBehaviour
 {
-    public bool isFiring = false;
+    private bool isFiring = false;
 
     // Track/Create bullet and hit point
     [Header("Raycast")]
-    public Transform firePoint;
-    public ParticleSystem hitEffect;
-    public ParticleSystem muzzleFlash;
-    public TrailRenderer bulletTrail;
-    public float delay;
+    [SerializeField]
+    private Transform firePoint;
+    [SerializeField]
+    private ParticleSystem hitEffect;
+    [SerializeField]
+    private ParticleSystem muzzleFlash;
+    [SerializeField]
+    private TrailRenderer bulletTrail;
+    [SerializeField]
+    private float delay;
     private float lastFired;
     private ThirdPersonCam thirdPersonCam;
     float maxRange = 1000f;
     Ray ray;
     RaycastHit hit;
-    public float damage = 30f;
+    [SerializeField]
+    private float damage = 30f;
     // Layer mask to ignore certain layers (mainly the player layer)
     private LayerMask ignoreLayerMask;
 

@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Explosion_hitbox_script : MonoBehaviour
 {
-    public float max_damage;
-    public float min_damage;
-    public float max_knockback;
-    public float min_knockback;
+    [SerializeField]
+    private float max_damage;
+    [SerializeField]
+    private float min_damage;
+    [SerializeField]
+    private float max_knockback;
+    [SerializeField]
+    private float min_knockback;
 
     private float starttime;
     private float damage_scaling;

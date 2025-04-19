@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Test_holster : MonoBehaviour
 {
-    public GameObject[] prefabs; // Array to hold the prefabs
-    public GameObject holster; // The empty object to which the prefab will be attached
+    [SerializeField]
+    private GameObject[] prefabs; // Array to hold the prefabs
+    [SerializeField]
+    private GameObject holster; // The empty object to which the prefab will be attached
 
     private int currentIndex = 0;
     private GameObject currentPrefabInstance;

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    public int selectedWeapon = 0; // The weapon that is selected
+    [SerializeField]
+    private int selectedWeapon = 0; // The weapon that is selected
     void Start()
     {
         SelectWeapon();
