@@ -35,8 +35,8 @@ public class Rocket_script : MonoBehaviour
     }
 
     
-     void OnTriggerEnter(Collider collision)
-     {
+    private void OnCollisionEnter(Collision collision)
+    {
         // Spawns a hitbox upon collision
         GameObject hitbox = (GameObject)Instantiate(explosion_hitbox, transform.position, explosion_prefab.transform.rotation);
 
@@ -47,7 +47,7 @@ public class Rocket_script : MonoBehaviour
         // GameObject aftermath_obj = (GameObject)Instantiate(aftermath, transform.position, aftermath.transform.rotation);
         Destroy(gameObject);
 
-     }
+    }
     
     
 }
