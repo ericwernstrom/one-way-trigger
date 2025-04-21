@@ -1505,6 +1505,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8895834679642659098, guid: 8d7e0c28210585b4cb4bc0d917bda626, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1279150219161982548}
+    - targetCorrespondingSourceObject: {fileID: 8895834679642659098, guid: 8d7e0c28210585b4cb4bc0d917bda626, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2787272155368743989}
   m_SourcePrefab: {fileID: 100100000, guid: 8d7e0c28210585b4cb4bc0d917bda626, type: 3}
 --- !u!4 &2164257793146644126 stripped
 Transform:
@@ -1602,3 +1605,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentXP: 0
   level: 1
+--- !u!114 &2787272155368743989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6813770262444274871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: babd99115adce42898e85e75b3f1e64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  rocket_damage: 10
+  HealthBar: {fileID: 0}

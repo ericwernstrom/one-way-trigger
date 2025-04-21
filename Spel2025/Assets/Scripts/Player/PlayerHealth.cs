@@ -18,9 +18,14 @@ public class PlayerHealth : MonoBehaviour
     private int rocket_damage = 10;
     [SerializeField]
     private HealthBar HealthBar;
+    [SerializeField]
+    private GameManagerScript gameManager;
+
+    private bool isDead;
+
 
     // This method is called when another collider enters the trigger collider
-    
+
     /*
     private void OnTriggerEnter(Collider other)
     {
@@ -36,15 +41,23 @@ public class PlayerHealth : MonoBehaviour
     }*/
 
     // Method to decrease health
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
-        HealthBar.SetHealth(health); // Update health bar
+        //HealthBar.SetHealth(health); // Update health bar
 
         // Dead if health is less than or equal to zero
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
-            Die();
+            isDead = true;
+
+            //Disable player when dead
+            gameObject.SetActive(false);
+            //Die();
+
+            gameManager.gameOver();
+
+            Debug.Log("Dead");
         }
     }
 
@@ -54,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
         // You can add any death effects here like playing a sound or animation
         Destroy(transform.parent.gameObject); // Destroy the player object
         // Respawning can be implemented here
-        Respawn();
+        //Respawn();
     }
 
     void Respawn()

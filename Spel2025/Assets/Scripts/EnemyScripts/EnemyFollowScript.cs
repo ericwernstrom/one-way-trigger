@@ -8,7 +8,7 @@ public class EnemyFollowScript : MonoBehaviour
     [SerializeField]
     private float speed;
     [SerializeField]
-    private float damage = 20f; //Kanske kan vara i ett annat script men kan nog vara här
+    private int damage = 20; //Kanske kan vara i ett annat script men kan nog vara här
 
     //Stun variables
     private bool isStunned = false;
@@ -47,6 +47,19 @@ public class EnemyFollowScript : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 5f);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+            }
+        }
+    }
+
 
     public void Stun(float duration)
     {
