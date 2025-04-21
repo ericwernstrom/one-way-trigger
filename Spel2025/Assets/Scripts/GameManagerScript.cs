@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
+    //Add pause menu
     public GameObject gameOverUI;
 
     // Start is called before the first frame update
@@ -30,27 +31,33 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
+    //Activates the GameOverScreen in Canvas
     public void gameOver()
     {
         gameOverUI.SetActive(true);
     }
 
+    //Restart button
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Debug.Log("Restart");
     }
 
+    //Main menu button
     public void mainMenu()
     {
         SceneManager.LoadScene("MainMenuScene");
         Debug.Log("Main Menu");
     }
 
+    //Quit button
     public void quit()
     {
         Application.Quit();
         Debug.Log("Quit");
     }
+
+    //Add pause menu functions
 
 }

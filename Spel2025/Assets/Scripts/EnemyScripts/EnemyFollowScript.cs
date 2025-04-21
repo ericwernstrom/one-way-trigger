@@ -19,7 +19,11 @@ public class EnemyFollowScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            target = player.transform;
+        }
     }
 
     // Update is called once per frame
@@ -34,6 +38,12 @@ public class EnemyFollowScript : MonoBehaviour
                 isStunned = false;
                 // Resume behavior
             }
+            return;
+        }
+
+        if (target == null)
+        {
+            // Player gone/dead, stop chasing
             return;
         }
 
