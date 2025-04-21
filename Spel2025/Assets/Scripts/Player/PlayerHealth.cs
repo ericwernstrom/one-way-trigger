@@ -15,46 +15,31 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private int health = 100; // Enemy's starting health
     [SerializeField]
-    private int rocket_damage = 10;
-    [SerializeField]
     private HealthBar HealthBar;
+    [SerializeField]
+    private GameManagerScript gameManager;
 
-    // This method is called when another collider enters the trigger collider
-    
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        // Check if the collider belongs to a rocket
-        if (other.gameObject.CompareTag("Projectile"))
-        {
-            // Decrease health
-            TakeDamage(rocket_damage);
-
-            // Destroy the bullet
-            Destroy(other.gameObject);
-        }
-    }*/
+    private bool isDead;
 
     // Method to decrease health
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
-        HealthBar.SetHealth(health); // Update health bar
+        //HealthBar.SetHealth(health); // Update health bar
 
         // Dead if health is less than or equal to zero
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
-            Die();
-        }
-    }
+            isDead = true;
 
-    // Method to handle enemy death
-    void Die()
-    {
-        // You can add any death effects here like playing a sound or animation
-        Destroy(transform.parent.gameObject); // Destroy the player object
-        // Respawning can be implemented here
-        Respawn();
+            //Disable player when dead
+            gameObject.SetActive(false);
+
+            //Call the gameOver function from gameManager which starts the gameoverscreen
+            gameManager.gameOver();
+
+            Debug.Log("Dead");
+        }
     }
 
     void Respawn()

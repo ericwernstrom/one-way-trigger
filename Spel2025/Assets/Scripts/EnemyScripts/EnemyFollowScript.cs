@@ -8,7 +8,7 @@ public class EnemyFollowScript : MonoBehaviour
     [SerializeField]
     private float speed;
     [SerializeField]
-    private float damage = 20f; //Kanske kan vara i ett annat script men kan nog vara här
+    private int damage = 20; //Kanske kan vara i ett annat script men kan nog vara här
 
     //Stun variables
     private bool isStunned = false;
@@ -19,7 +19,11 @@ public class EnemyFollowScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            target = player.transform;
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +41,12 @@ public class EnemyFollowScript : MonoBehaviour
             return;
         }
 
+        if (target == null)
+        {
+            // Player gone/dead, stop chasing
+            return;
+        }
+
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
         // Make the enemy look at the player
@@ -47,6 +57,19 @@ public class EnemyFollowScript : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 5f);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+            }
+        }
+    }
+
 
     public void Stun(float duration)
     {
