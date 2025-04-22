@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public Animator transition;
+
     public void StartGame()
     {
-        Debug.Log("Hejsan");
+        StartCoroutine(StartGameRoutine());
+    }
+
+    IEnumerator StartGameRoutine()
+    {
+        transition.SetTrigger("GameStart");
+
+        yield return new WaitForSeconds(1f);
+
         SceneManager.LoadScene("FourthDemoScene");
     }
 }
