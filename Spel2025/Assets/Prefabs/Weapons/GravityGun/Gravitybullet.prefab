@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a704e0ee8e7345438dcf3e85129c70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit_particles: {fileID: 1508197114512602925, guid: 84be4135c156e6b48b9ac7afa049689d, type: 3}
+  hit_particles: {fileID: 5967951348598625363, guid: 6d836a4efe0424f2f9f7840e1f27ed51, type: 3}
   damage: 20
 --- !u!135 &7704063403339302878
 SphereCollider:
