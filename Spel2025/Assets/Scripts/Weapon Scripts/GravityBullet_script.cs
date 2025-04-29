@@ -8,11 +8,9 @@ public class GravityBullet_script : MonoBehaviour
     readonly float G = 40f;
     GameObject[] enemies;
 
-    [SerializeField]
-    private GameObject hit_particles;
+    [SerializeField] private GameObject hit_particles;
 
-    [SerializeField]
-    private float damage = 20f;
+    [SerializeField] private float damage = 20f;
     // Start is called before the first frame update
     void Start()
     {
