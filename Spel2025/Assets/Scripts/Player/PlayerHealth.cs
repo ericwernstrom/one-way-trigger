@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 /// <summary>
 /// Gives player gameobject a health attribute that decreases when hit by
@@ -15,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private int health = 100; // Player's starting health
     [SerializeField]
-    private HealthBar HealthBar;
+    private Slider healthBar;
     [SerializeField]
     private GameManagerScript gameManager;
     [SerializeField]
@@ -27,7 +28,8 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        //HealthBar.SetHealth(health); // Update health bar
+        //Change the healthBar
+        healthBar.value = health;
 
         // Dead if health is less than or equal to zero
         if (health <= 0 && !isDead)
@@ -56,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Respawn()
     {
-        HealthBar.SetMaxHealth(100); // Reset health
+        //HealthBar.SetMaxHealth(100); // Reset health
     }
 }
 

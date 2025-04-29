@@ -53,30 +53,34 @@ public class ShootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        float fire = Input.GetAxis("Fire1");
-        time_last_projectile += Time.deltaTime;
-
-        // when fire is pressed and time since last projectile is over rate of fire, fire projectile
-        if (fire == 1 && time_last_projectile > rate_of_fire)
+        if (!GameManagerScript.isPaused)
         {
+            float fire = Input.GetAxis("Fire1");
+            time_last_projectile += Time.deltaTime;
 
-            time_last_projectile = 0;
-            Fire_projectile();
-        }
+            // when fire is pressed and time since last projectile is over rate of fire, fire projectile
+            if (fire == 1 && time_last_projectile > rate_of_fire)
+            {
 
-        // Update isInCombat based on fire input
-        if(fire == 1)
-        {
-            thirdPersonCam.CombatStart();
-        } else {
-            thirdPersonCam.CombatEnd();
-        }
+                time_last_projectile = 0;
+                Fire_projectile();
+            }
 
-        // Cycle through projectiles if right mouse button (or another button) is pressed
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            CycleProjectile();
+            // Update isInCombat based on fire input
+            if (fire == 1)
+            {
+                thirdPersonCam.CombatStart();
+            }
+            else
+            {
+                thirdPersonCam.CombatEnd();
+            }
+
+            // Cycle through projectiles if right mouse button (or another button) is pressed
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                CycleProjectile();
+            }
         }
 
     }
