@@ -13,11 +13,13 @@ using TMPro;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
-    private int health = 100; // Enemy's starting health
+    private int health = 100; // Player's starting health
     [SerializeField]
     private HealthBar HealthBar;
     [SerializeField]
     private GameManagerScript gameManager;
+    [SerializeField]
+    private int maxHealth = 100; // Player's current max health
 
     private bool isDead;
 
@@ -39,6 +41,16 @@ public class PlayerHealth : MonoBehaviour
             gameManager.gameOver();
 
             Debug.Log("Dead");
+        }
+    }
+
+    public void Heal(int amount)
+    {
+        health += amount;
+
+        if (health <= maxHealth)
+        {
+            health = maxHealth;
         }
     }
 

@@ -13,6 +13,12 @@ public class PlayerCollectionSphere : MonoBehaviour
             {
                 orb.Collect();
             }
+
+            HealPickup hp = other.GetComponent<HealPickup>();
+            if (hp != null)
+            {
+                hp.Collect();
+            }
         }
     }
 }
