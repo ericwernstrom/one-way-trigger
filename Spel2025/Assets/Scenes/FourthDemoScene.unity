@@ -621,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3846176536786681481, guid: dd34afee36227a8439530bb0336aa88d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.11992006
+      value: -0.119920254
       objectReference: {fileID: 0}
     - target: {fileID: 4034844702894549223, guid: dd34afee36227a8439530bb0336aa88d, type: 3}
       propertyPath: m_IsActive
@@ -929,7 +929,7 @@ PrefabInstance:
     - target: {fileID: 8682563884754842795, guid: 4ddfa4e8cc69c4f999fd42a3f372d5e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1111880797250891105, guid: e90f637c0974c450695881b6a163529b, type: 3}
+      objectReference: {fileID: 1278698353}
     - target: {fileID: 8682563884754842795, guid: 4ddfa4e8cc69c4f999fd42a3f372d5e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: resumeGame
