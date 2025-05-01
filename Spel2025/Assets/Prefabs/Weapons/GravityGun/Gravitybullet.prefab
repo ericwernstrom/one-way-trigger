@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a704e0ee8e7345438dcf3e85129c70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit_particles: {fileID: 5967951348598625363, guid: 6d836a4efe0424f2f9f7840e1f27ed51, type: 3}
+  hit_particles: {fileID: 6989810874497664024, guid: 4dbd99bfa38029443a69412801c0c800, type: 3}
   damage: 20
 --- !u!135 &7704063403339302878
 SphereCollider:
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 5845947754307970274}
   - component: {fileID: 5012822481092735840}
   m_Layer: 0
-  m_Name: Wind_trail_1
+  m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +227,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.50660396, g: 0.11764707, b: 0.6784314, a: 1}
+      key0: {r: 0.509434, g: 0.040850844, b: 0.35542408, a: 1}
       key1: {r: 0.15465832, g: 0.0042719753, b: 0.3018868, a: 0.12156863}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
