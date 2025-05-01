@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3331662796224005365}
   - component: {fileID: 3098122696317655712}
   - component: {fileID: 6565655283943437691}
-  - component: {fileID: 1508760187335297992}
   m_Layer: 0
   m_Name: gravity particle3
   m_TagString: Untagged
@@ -29,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5457060535755824511}
@@ -100,22 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3d85972f0d64b52bba2d2958910dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1508760187335297992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485436774946782177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1a9ddd428f74c87b81e8bf74f1744c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantiationInterval: 0.05
-  min_scale: 0.1
-  scale_modifier: 0.8
-  linger_time: 0
 --- !u!1 &6989810874497664024
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5457060535755824511}
+  - component: {fileID: 2477591389268431904}
   m_Layer: 0
   m_Name: GravityParticle
   m_TagString: Untagged
@@ -142,9 +126,25 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3331662796224005365}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2477591389268431904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6989810874497664024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1a9ddd428f74c87b81e8bf74f1744c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instantiationInterval: 0.05
+  min_scale: 0.1
+  scale_modifier: 0.8
+  linger_time: 0
