@@ -49,9 +49,13 @@ public class CameraManager : MonoBehaviour
 
     public void HandleAllCameraMovement()
     {
-        FollowTarget();
-        RotateCamera();
-        HandleCameraCollisions();
+        if (!GameManagerScript.isPaused)
+        {
+            FollowTarget();
+            RotateCamera();
+            HandleCameraCollisions();
+        }
+            
     }
     private void FollowTarget()
     {
