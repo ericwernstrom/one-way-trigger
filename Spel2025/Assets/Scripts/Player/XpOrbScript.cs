@@ -18,6 +18,7 @@ public class XPOrb : MonoBehaviour
     private float fallAcceleration = 3.0f;
     [SerializeField]
     private LayerMask groundLayer;
+    private bool onGround = false;
 
     private Transform target;
     private bool isAttracted = false;
@@ -46,12 +47,15 @@ public class XPOrb : MonoBehaviour
     private void Fall()
     {
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position, 0.5f, -Vector3.up, out hit, 0f, groundLayer))
+        if (Physics.SphereCast(transform.position, 0.5f, Vector3.down, out hit, 1f, groundLayer))
         {
+            onGround = true;
             fallSpeed = 0f;
+            // Optionally snap to ground
+            transform.position = new Vector3(transform.position.x, hit.point.y + 0.5f, transform.position.z);
             return;
         }
-        else
+        else if(!onGround)
         {
             fallSpeed = Mathf.Lerp(fallSpeed, 40f, fallAcceleration * Time.deltaTime);
             transform.position += Vector3.down * fallSpeed * Time.deltaTime;
