@@ -46,14 +46,14 @@ public class XPOrb : MonoBehaviour
     private void Fall()
     {
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position, 0.1f, -Vector3.up, out hit, 0f, groundLayer))
+        if (Physics.SphereCast(transform.position, 0.2f, -Vector3.up, out hit, 0f, groundLayer))
         {
             fallSpeed = 0f;
             return;
         }
         else
         {
-            fallSpeed = Mathf.Lerp(fallSpeed, 100f, fallAcceleration * Time.deltaTime);
+            fallSpeed = Mathf.Lerp(fallSpeed, 40f, fallAcceleration * Time.deltaTime);
             transform.position += Vector3.down * fallSpeed * Time.deltaTime;
         }
     }
