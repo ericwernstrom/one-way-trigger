@@ -28,7 +28,7 @@ public class ShootProjectile : MonoBehaviour
         //GameObject cameraBrain = GameObject.Find("CinemachineBrain");
         //thirdPersonCam = cameraBrain.GetComponent<ThirdPersonCam>();
    
-        cameraObject = GameObject.Find("MainCamera").GetComponent<Camera>();
+        cameraObject = Camera.main;
 
         //deafault settings if settings are 0 in unity
         if (rate_of_fire == 0){
@@ -62,7 +62,7 @@ public class ShootProjectile : MonoBehaviour
             // when fire is pressed and time since last projectile is over rate of fire, fire projectile
             if (fire == 1 && time_last_projectile > rate_of_fire)
             {
-
+                Debug.Log("inne");
                 time_last_projectile = 0;
                 Fire_projectile();
             }
