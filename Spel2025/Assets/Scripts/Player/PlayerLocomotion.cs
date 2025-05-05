@@ -37,6 +37,9 @@ public class PlayerLocomotion : MonoBehaviour
     private bool isGrounded;
     //private bool isJumping;
 
+    private bool rotationLocked = false;
+    private float rotationLockTimer = 0f;
+
 
     private void Awake()
     {
@@ -50,8 +53,31 @@ public class PlayerLocomotion : MonoBehaviour
   
         //if (playerManager.inInteracting) return;
         HandleMovement();
-        HandleRotation();
+
+        //For smoother rotation after shooting
+        if (rotationLocked)
+        {
+            rotationLockTimer -= Time.deltaTime;
+            if (rotationLockTimer <= 0f)
+            {
+                rotationLocked = false;
+            }
+        }
+
+        if (!rotationLocked)
+        {
+            HandleRotation(); // only allow rotation based on movement when not locked
+        }
+
     }
+
+    //For smoother rotation
+    public void TemporarilyDisableMovementRotation(float duration = 0.5f)
+    {
+        rotationLocked = true;
+        rotationLockTimer = duration;
+    }
+
 
     private void HandleMovement()
     {
@@ -92,6 +118,9 @@ public class PlayerLocomotion : MonoBehaviour
         targetDirection = targetDirection + cameraObject.right * inputManager.horizontalInput;
         targetDirection.Normalize();
         targetDirection.y = 0;
+
+        if (targetDirection.magnitude == 0)
+            return; // No input, keep current rotation
 
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
         Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);

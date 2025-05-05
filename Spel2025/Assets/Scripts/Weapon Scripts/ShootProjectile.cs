@@ -12,7 +12,10 @@ public class ShootProjectile : MonoBehaviour
     [SerializeField] private float speed_of_projectile;
     [SerializeField] private float lifetime_of_projectile;
     [SerializeField] private float upward_force = 0f; // New variable for throwables
-    
+
+    private Transform playerTransform;
+
+
     private ThirdPersonCam thirdPersonCam;
 
     
@@ -27,8 +30,17 @@ public class ShootProjectile : MonoBehaviour
 
         //GameObject cameraBrain = GameObject.Find("CinemachineBrain");
         //thirdPersonCam = cameraBrain.GetComponent<ThirdPersonCam>();
-   
+
         cameraObject = Camera.main;
+
+        if (playerTransform == null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                playerTransform = player.transform;
+            }
+        }
 
         //deafault settings if settings are 0 in unity
         if (rate_of_fire == 0){
@@ -115,6 +127,23 @@ public class ShootProjectile : MonoBehaviour
             // If the ray doesn't hit anything, shoot in the forward direction of the camera
             targetPoint = ray.GetPoint(1000); // Some far away point
         }
+
+        //Snap rotation of player towards where the camera is looking
+        if (playerTransform != null)
+        {
+            Vector3 flatCameraForward = cameraObject.transform.forward;
+            flatCameraForward.y = 0;
+            flatCameraForward.Normalize();
+
+            if (flatCameraForward.sqrMagnitude > 0)
+            {
+                playerTransform.rotation = Quaternion.LookRotation(flatCameraForward);
+            }
+
+            // Optional: notify locomotion to delay movement rotation for smoother blend
+            playerTransform.GetComponent<PlayerLocomotion>()?.TemporarilyDisableMovementRotation();
+        }
+
 
         //Rotates the projectile
         Quaternion specificRotation = Quaternion.Euler(90, 0, 0);
