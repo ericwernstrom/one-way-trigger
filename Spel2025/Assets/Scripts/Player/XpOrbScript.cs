@@ -46,7 +46,7 @@ public class XPOrb : MonoBehaviour
     private void Fall()
     {
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position, 0.2f, -Vector3.up, out hit, 0f, groundLayer))
+        if (Physics.SphereCast(transform.position, 0.5f, -Vector3.up, out hit, 0f, groundLayer))
         {
             fallSpeed = 0f;
             return;
