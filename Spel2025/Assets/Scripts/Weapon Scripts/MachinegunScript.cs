@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MachineGunScript : MonoBehaviour
 {
-    private bool isFiring = false;
+    public bool isFiring = false;
 
     // Track/Create bullet and hit point
     [Header("Raycast")]

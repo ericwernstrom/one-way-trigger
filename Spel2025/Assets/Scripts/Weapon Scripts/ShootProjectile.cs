@@ -6,18 +6,13 @@ using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour
 {
-    [SerializeField]
-    private List<GameObject> projectile_prefabs;
-    [SerializeField]
-    private float rate_of_fire;
-    [SerializeField]
-    private float size_of_projectile;
-    [SerializeField]
-    private float speed_of_projectile;
-    [SerializeField]
-    private float lifetime_of_projectile;
-    [SerializeField]
-    private float upward_force = 0f; // New variable for throwables
+    [SerializeField] private List<GameObject> projectile_prefabs;
+    [SerializeField] private float rate_of_fire;
+    [SerializeField] private float size_of_projectile;
+    [SerializeField] private float speed_of_projectile;
+    [SerializeField] private float lifetime_of_projectile;
+    [SerializeField] private float upward_force = 0f; // New variable for throwables
+    
     private ThirdPersonCam thirdPersonCam;
 
     
