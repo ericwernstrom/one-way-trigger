@@ -15,6 +15,9 @@ public class ShootProjectile : MonoBehaviour
     
     private ThirdPersonCam thirdPersonCam;
 
+    
+    private Camera cameraObject;
+
     private float time_last_projectile = 0;
     private int currentProjectileIndex = 0;
 
@@ -22,8 +25,11 @@ public class ShootProjectile : MonoBehaviour
     void Start()
     {
 
-        GameObject cameraBrain = GameObject.Find("CinemachineBrain");
-        thirdPersonCam = cameraBrain.GetComponent<ThirdPersonCam>();
+        //GameObject cameraBrain = GameObject.Find("CinemachineBrain");
+        //thirdPersonCam = cameraBrain.GetComponent<ThirdPersonCam>();
+   
+        cameraObject = Camera.main;
+
         //deafault settings if settings are 0 in unity
         if (rate_of_fire == 0){
             rate_of_fire = 1.0f;
@@ -56,12 +62,14 @@ public class ShootProjectile : MonoBehaviour
             // when fire is pressed and time since last projectile is over rate of fire, fire projectile
             if (fire == 1 && time_last_projectile > rate_of_fire)
             {
-
+                Debug.Log("inne");
                 time_last_projectile = 0;
                 Fire_projectile();
             }
 
             // Update isInCombat based on fire input
+
+            /*
             if (fire == 1)
             {
                 thirdPersonCam.CombatStart();
@@ -70,6 +78,7 @@ public class ShootProjectile : MonoBehaviour
             {
                 thirdPersonCam.CombatEnd();
             }
+            */
 
             // Cycle through projectiles if right mouse button (or another button) is pressed
             if (Input.GetKeyDown(KeyCode.B))
@@ -83,15 +92,17 @@ public class ShootProjectile : MonoBehaviour
     private void Fire_projectile()
     {
 
-        thirdPersonCam.CombatStart();
-        
+        //thirdPersonCam.CombatStart();
+
         // Calculate direction towards the center of the screen
-        Camera mainCamera = Camera.main;
-        Vector3 direction = mainCamera.transform.forward;
+        //Camera mainCamera = Camera.main;
+        //Vector3 direction = mainCamera.transform.forward;
+        Vector3 direction = cameraObject.transform.forward;
+
         //Vector3 direction = (targetPoint - transform.position).normalized;
 
         Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-        Ray ray = mainCamera.ScreenPointToRay(screenCenter);
+        Ray ray = cameraObject.ScreenPointToRay(screenCenter);
 
         Vector3 targetPoint;
         RaycastHit hit;
