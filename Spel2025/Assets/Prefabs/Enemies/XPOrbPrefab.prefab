@@ -48,8 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xpAmount: 10
   moveSpeed: 5
+  fallSpeed: 2
   maxSpeed: 40
   acceleration: 4
+  fallAcceleration: 3
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!135 &7992264824292015170
 SphereCollider:
   m_ObjectHideFlags: 0
