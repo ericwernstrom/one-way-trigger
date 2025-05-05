@@ -346,6 +346,17 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 18
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &189964126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7565784526464535357, guid: 4ddfa4e8cc69c4f999fd42a3f372d5e6, type: 3}
+  m_PrefabInstance: {fileID: 1074937328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &212469480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2673,6 +2684,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6570232094443547779, guid: 1b169780afbb59943ba4f51dfd99ba9f, type: 3}
   m_PrefabInstance: {fileID: 684840585}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1650268729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1561430739238564013, guid: 4ddfa4e8cc69c4f999fd42a3f372d5e6, type: 3}
+  m_PrefabInstance: {fileID: 1074937328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1663118488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7881041891606202706, guid: e939878e738db7342a021109257f53d9, type: 3}
@@ -2703,6 +2725,7 @@ MonoBehaviour:
   currentXP: 0
   level: 1
   experienceBar: {fileID: 0}
+  XPAmount: {fileID: 0}
 --- !u!114 &1778643524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3157,6 +3180,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2288056903198719489, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
+      propertyPath: XPAmount
+      value: 
+      objectReference: {fileID: 189964126}
+    - target: {fileID: 2288056903198719489, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
+      propertyPath: experienceBar
+      value: 
+      objectReference: {fileID: 1650268729}
+    - target: {fileID: 2288056903198719489, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
+      propertyPath: experienceText
+      value: 
+      objectReference: {fileID: 189964126}
     - target: {fileID: 2653606543802208761, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
       propertyPath: cameraObject
       value: 
