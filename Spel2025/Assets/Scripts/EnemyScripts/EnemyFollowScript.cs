@@ -47,15 +47,19 @@ public class EnemyFollowScript : MonoBehaviour
             return;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        // Move only in XZ plane
+        Vector3 targetPosition = new Vector3(target.position.x, transform.position.y, target.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        // Make the enemy look at the player
+        // Rotate only in XZ plane
         Vector3 direction = target.position - transform.position;
-        if (direction != Vector3.zero)
+        Vector3 lookDirection = new Vector3(direction.x, 0f, direction.z);
+        if (lookDirection != Vector3.zero)
         {
-            Quaternion rot = Quaternion.LookRotation(direction);
+            Quaternion rot = Quaternion.LookRotation(lookDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 5f);
         }
+
     }
 
     private void OnCollisionEnter(Collision collision)
