@@ -14,7 +14,7 @@ public class PlayerCollectionSphere : MonoBehaviour
                 orb.Collect();
             }
 
-            HealPickup hp = other.GetComponent<HealPickup>();
+            HealthPickup hp = other.GetComponent<HealthPickup>();
             if (hp != null)
             {
                 hp.Collect();

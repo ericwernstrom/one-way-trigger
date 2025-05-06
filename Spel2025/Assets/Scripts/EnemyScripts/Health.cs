@@ -52,6 +52,13 @@ public class Health : MonoBehaviour
         {
             dropper.DropXP();
         }
+
+        HealthDrop hp = GetComponent<HealthDrop>();
+        if (hp != null)
+        {
+            hp.DropHealth();
+        }
+
         // You can add any death effects here like playing a sound or animation
         Destroy(gameObject); // Destroy the enemy gameObject
     }
