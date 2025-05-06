@@ -49,10 +49,12 @@ public class PlayerHealth : MonoBehaviour
     public void Heal(int amount)
     {
         health += amount;
+        healthBar.value = health;
 
-        if (health <= maxHealth)
+        if (health >= maxHealth)
         {
             health = maxHealth;
+            healthBar.value = health;
         }
     }
 

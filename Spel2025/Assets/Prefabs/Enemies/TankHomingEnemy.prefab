@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 8339629562336244507}
   - component: {fileID: 8422749166751528649}
   - component: {fileID: 6070269412541469975}
+  - component: {fileID: -8240774587904018220}
   m_Layer: 0
   m_Name: TankHomingEnemy
   m_TagString: Enemy
@@ -216,6 +217,20 @@ MonoBehaviour:
   XPOrbPrefab: {fileID: 697992805664400322, guid: 6013d6e1e6c371c4faaab664f5877b9b, type: 3}
   xpAmount: 10
   numberOfOrbs: 1
+--- !u!114 &-8240774587904018220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666100087313850389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad72cfa755c924c31bbce4513f718b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPickupPrefab: {fileID: 6946306472502740692, guid: 956d9c878fa1c45b0b841ab30d774203, type: 3}
+  numberOfPickups: 1
 --- !u!1001 &455811137588424968
 PrefabInstance:
   m_ObjectHideFlags: 0
