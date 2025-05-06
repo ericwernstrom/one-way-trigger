@@ -40,11 +40,19 @@ public class PlayerStats : MonoBehaviour
             maxXP += xpToNextLevel;
 
             levelText.text = level.ToString();
+
+            if (GameManagerScript.Instance != null)
+            {
+                GameManagerScript.Instance.showLevelUpScreen();
+            }
+            else
+            {
+                Debug.LogWarning("GameManagerScript.Instance is null!");
+            }
         }
 
         experienceBar.maxValue = xpToNextLevel;
         experienceBar.value = levelProgressXP;
-
         XPAmountText.text = currentXP.ToString() + " exp / " + maxXP + " exp";
     }
 }

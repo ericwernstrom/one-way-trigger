@@ -8,8 +8,23 @@ public class GameManagerScript : MonoBehaviour
     //Add pause menu
     public GameObject gameOverUI;
     public GameObject pauseMenuUI;
+    public GameObject levelUpScreen;
+    public static GameManagerScript Instance;
 
     public static bool isPaused;
+
+    private void Awake()
+    {
+        // Singleton pattern setup
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +37,7 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         //If game over ui is active -> enable cursor else diable
-        if (gameOverUI.activeInHierarchy)
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else if (pauseMenuUI.activeInHierarchy)
+        if (gameOverUI.activeInHierarchy || pauseMenuUI.activeInHierarchy || levelUpScreen.activeInHierarchy)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -98,6 +108,22 @@ public class GameManagerScript : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit");
+    }
+
+    public void showLevelUpScreen()
+    {
+        Time.timeScale = 0f;
+        levelUpScreen.SetActive(true);
+        isPaused = true;
+    }
+
+    //placeholder, choose a buff on the level up screen
+    public void chooseBuff()
+    {
+        Debug.Log("Buff Chosen!");
+        levelUpScreen.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
     }
 
     //Add pause menu functions
