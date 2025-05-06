@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject EnemyPrefab;
 
     [SerializeField]
-    private float spawnInterval = 3f;
+    private float spawnInterval = 5f;
     [SerializeField]
     private float spawnDistance = 10f;
     [SerializeField]
@@ -24,8 +24,9 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            
+            // Spawn every spawnInterval seconds
             yield return new WaitForSeconds(spawnInterval);
+
             // Generate new random position to spawn 
             Vector3 spawnOffset = new Vector3(Random.Range(- spawnDistance, spawnDistance + 1), spawnHeight, Random.Range( - spawnDistance, spawnDistance + 1));
             Instantiate(EnemyPrefab, transform.position + spawnOffset, Quaternion.identity);
