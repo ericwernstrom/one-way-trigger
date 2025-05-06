@@ -435,6 +435,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4824854761553023244, guid: 4ddfa4e8cc69c4f999fd42a3f372d5e6, type: 3}
   m_PrefabInstance: {fileID: 1074937328}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &512458083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2061842468218558217, guid: 4ddfa4e8cc69c4f999fd42a3f372d5e6, type: 3}
+  m_PrefabInstance: {fileID: 1074937328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &577086621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2737153256117997021, guid: 7f1dd46d44247c844a4da1179564ada3, type: 3}
@@ -2724,8 +2735,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentXP: 0
   level: 1
+  xpToNextLevel: 100
   experienceBar: {fileID: 0}
-  XPAmount: {fileID: 0}
+  XPAmountText: {fileID: 0}
+  levelText: {fileID: 0}
 --- !u!114 &1778643524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3182,6 +3195,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2288056903198719489, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
       propertyPath: XPAmount
+      value: 
+      objectReference: {fileID: 189964126}
+    - target: {fileID: 2288056903198719489, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 512458083}
+    - target: {fileID: 2288056903198719489, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
+      propertyPath: XPAmountText
       value: 
       objectReference: {fileID: 189964126}
     - target: {fileID: 2288056903198719489, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
