@@ -74,7 +74,6 @@ public class ShootProjectile : MonoBehaviour
             // when fire is pressed and time since last projectile is over rate of fire, fire projectile
             if (fire == 1 && time_last_projectile > rate_of_fire)
             {
-                Debug.Log("inne");
                 time_last_projectile = 0;
                 Fire_projectile();
             }
