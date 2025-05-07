@@ -17,7 +17,7 @@ public class AITarget : MonoBehaviour
     {
         m_Agent = GetComponent<NavMeshAgent>();
 
-        Transform Target = GameObject.FindGameObjectWithTag("Player").transform;
+        Target = GameObject.FindGameObjectWithTag("Player").transform;
 
         NavMeshHit hit;
         if (NavMesh.SamplePosition(m_Agent.transform.position, out hit, 1.0f, NavMesh.AllAreas))
@@ -44,7 +44,6 @@ public class AITarget : MonoBehaviour
 
     void Update()
     {
-        Transform Target = GameObject.FindGameObjectWithTag("Player").transform;
 
         m_Distance = Vector3.Distance(m_Agent.transform.position, Target.position);
         // If the distance is greater than the attack distance, move towards the target

@@ -3465,7 +3465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1293632921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3481,6 +3481,10 @@ MonoBehaviour:
   enemies:
   - enemyPrefab: {fileID: 8636467398200902323, guid: aca3b56b433d2594b8af3a8ff2a06b06, type: 3}
     cost: 1
+  - enemyPrefab: {fileID: 2597990983395067397, guid: 7b6fe9c2459e8534cb476a7d62ffbafc, type: 3}
+    cost: 2
+  - enemyPrefab: {fileID: 3246806222719837848, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
+    cost: 3
   currentWave: 1
   waveValue: 0
   enemiesToSpawn: []
