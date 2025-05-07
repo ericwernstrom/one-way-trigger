@@ -18,6 +18,6 @@ public class MenuManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene("FourthDemoScene");
+        SceneManager.LoadScene("ExperienceScene");
     }
 }

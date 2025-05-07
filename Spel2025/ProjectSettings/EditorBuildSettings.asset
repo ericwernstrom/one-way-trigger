@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FourthDemoScene.unity
     guid: f5998c9ea17e2174a8bd6e4a6c9f10d2
+  - enabled: 1
+    path: Assets/Scenes/ExperienceScene.unity
+    guid: af6722a3e7f152740982589f722e01fd
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
