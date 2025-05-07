@@ -12,7 +12,13 @@ public class AITarget : MonoBehaviour
     private NavMeshAgent m_Agent;
     private float m_Distance;
 
-    
+    //Stun variables
+    private bool isStunned = false;
+    private float stunTimer = 0f;
+    [SerializeField]
+    private float stunDuration = 2f;
+
+
     void Start()
     {
         m_Agent = GetComponent<NavMeshAgent>();
@@ -44,6 +50,21 @@ public class AITarget : MonoBehaviour
 
     void Update()
     {
+        //Stun from stun_hitbox prefab
+        if (isStunned)
+        {
+            // Stop the agent while stunned
+            m_Agent.isStopped = true;
+
+            stunTimer -= Time.deltaTime;
+            if (stunTimer <= 0f)
+            {
+                isStunned = false;
+                // Start moving again
+                m_Agent.isStopped = false;
+            }
+            return;
+        }
 
         m_Distance = Vector3.Distance(m_Agent.transform.position, Target.position);
         // If the distance is greater than the attack distance, move towards the target
@@ -57,5 +78,12 @@ public class AITarget : MonoBehaviour
         {
             m_Agent.isStopped = true;
         }
+    }
+
+    public void Stun(float duration)
+    {
+        isStunned = true;
+        stunTimer = duration;
+        // Optionally: Stop navmesh, animations, etc.
     }
 }

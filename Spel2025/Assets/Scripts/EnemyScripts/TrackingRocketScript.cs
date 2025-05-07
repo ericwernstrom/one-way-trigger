@@ -49,6 +49,7 @@ public class TrackingRocketScript : MonoBehaviour
     void Update()
     {
         //Stun from stun_hitbox prefab
+        /*
         if (isStunned)
         {
             stunTimer -= Time.deltaTime;
@@ -59,6 +60,7 @@ public class TrackingRocketScript : MonoBehaviour
             }
             return;
         }
+        */
 
         if (isTracking)
         {

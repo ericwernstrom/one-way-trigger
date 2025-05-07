@@ -18,10 +18,10 @@ public class Stun_hitbox_script : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             //Checking for EnemyFollowScript
-            EnemyFollowScript enemy = other.GetComponent<EnemyFollowScript>();
-            if (enemy != null)
+            AITarget enemyAI = other.GetComponent<AITarget>();
+            if (enemyAI != null)
             {
-                enemy.Stun(stunDuration);
+                enemyAI.Stun(stunDuration);
             }
 
             // Check for TrackingRocketScript
