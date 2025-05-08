@@ -87,7 +87,7 @@ MonoBehaviour:
   speed_of_projectile: 15
   lifetime_of_projectile: 6
   upward_force: 0
-  fireGravityGun: {fileID: 8300000, guid: 03ce2869b0b299f42aa2be15caf9d929, type: 3}
+  fireSound: {fileID: 8300000, guid: f6dc096075435bf4e92f5a26d0251042, type: 3}
 --- !u!82 &2557618432784524962
 AudioSource:
   m_ObjectHideFlags: 0
