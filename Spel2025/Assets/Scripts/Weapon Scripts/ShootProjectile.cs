@@ -26,8 +26,6 @@ public class ShootProjectile : MonoBehaviour
 
     // AUDIO variables
     private AudioSource source;
-    [SerializeField]
-    private AudioClip fireSound;
 
     // Start is called before the first frame update
     void Start()
@@ -192,9 +190,7 @@ public class ShootProjectile : MonoBehaviour
 
         // AUDIO
         // Play sound of weapon firing
-        source.PlayOneShot(fireSound, 1.0f);
-
-
+        source.PlayOneShot(source.clip);
     }
 
     private void CycleProjectile()
