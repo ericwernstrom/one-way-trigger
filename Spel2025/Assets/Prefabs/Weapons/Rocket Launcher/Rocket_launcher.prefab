@@ -86,7 +86,6 @@ MonoBehaviour:
   speed_of_projectile: 45
   lifetime_of_projectile: 10
   upward_force: 0
-  fireSound: {fileID: 8300000, guid: e3813c2e5af392b4cacc2f0310ec300a, type: 3}
 --- !u!82 &6328796496150026361
 AudioSource:
   m_ObjectHideFlags: 0
@@ -99,7 +98,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e3813c2e5af392b4cacc2f0310ec300a, type: 3}
   m_Resource: {fileID: 8300000, guid: e3813c2e5af392b4cacc2f0310ec300a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
