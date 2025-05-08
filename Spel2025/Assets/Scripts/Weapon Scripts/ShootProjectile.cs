@@ -24,6 +24,11 @@ public class ShootProjectile : MonoBehaviour
     private float time_last_projectile = 0;
     private int currentProjectileIndex = 0;
 
+    // AUDIO variables
+    private AudioSource source;
+    [SerializeField]
+    private AudioClip fireGravityGun;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +65,9 @@ public class ShootProjectile : MonoBehaviour
         }
 
         time_last_projectile = rate_of_fire;
+
+        // AUDIO
+        source = GetComponent<AudioSource>();
 
     }
 
@@ -182,7 +190,11 @@ public class ShootProjectile : MonoBehaviour
         // Destroy projectile after lifetime
         Destroy(projectileInstance, lifetime_of_projectile);
 
-        
+        // AUDIO
+        // Play sound of weapon firing
+        source.PlayOneShot(fireGravityGun, 1.0f);
+
+
     }
 
     private void CycleProjectile()
