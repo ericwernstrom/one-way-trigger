@@ -55,6 +55,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
+  pickup_sound: {fileID: 8300000, guid: 922a51aa08354ce4da5b24e5c5b7c705, type: 3}
 --- !u!135 &7992264824292015170
 SphereCollider:
   m_ObjectHideFlags: 0

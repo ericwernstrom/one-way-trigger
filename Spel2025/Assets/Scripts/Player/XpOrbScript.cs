@@ -23,6 +23,9 @@ public class XPOrb : MonoBehaviour
     private Transform target;
     private bool isAttracted = false;
 
+    // AUDIO
+    public AudioClip pickup_sound;
+
     public void StartAttraction(Transform playerTransform)
     {
         target = playerTransform;
@@ -73,7 +76,8 @@ public class XPOrb : MonoBehaviour
                 stats.AddXP(xpAmount);
             }
         }
-
+        // AUDIO
+        AudioSource.PlayClipAtPoint(pickup_sound, transform.position);
         Destroy(gameObject);
     }
 
