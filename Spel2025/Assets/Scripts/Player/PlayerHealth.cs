@@ -24,6 +24,10 @@ public class PlayerHealth : MonoBehaviour
 
     private bool isDead;
 
+    // AUDIO
+    [SerializeField]
+    private AudioClip death_sound;
+
     // Method to decrease health
     public void TakeDamage(int damage)
     {
@@ -35,6 +39,8 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0 && !isDead)
         {
             isDead = true;
+            // AUDIO
+            AudioSource.PlayClipAtPoint(death_sound, transform.position);
 
             //Disable player when dead
             gameObject.SetActive(false);

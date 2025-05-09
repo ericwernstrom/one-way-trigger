@@ -15,6 +15,10 @@ public class HealthPickup : MonoBehaviour
     [SerializeField]
     private float fallAcceleration = 3.0f;
 
+    // AUDIO
+    [SerializeField]
+    private AudioClip pickup_sound;
+
     void Update()
     {
         Fall();
@@ -33,6 +37,8 @@ public class HealthPickup : MonoBehaviour
             }
         }
 
+        // AUDIO
+        AudioSource.PlayClipAtPoint(pickup_sound, transform.position);
         Destroy(gameObject);
     }
 

@@ -3035,6 +3035,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 774251726}
     - target: {fileID: 4041360144664785331, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
+      propertyPath: death_sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fbe5f1ae87a4a8419c9884ccfb30ace, type: 3}
+    - target: {fileID: 4041360144664785331, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 24742585}

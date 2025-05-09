@@ -151,6 +151,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   fallAcceleration: 3
+  pickup_sound: {fileID: 8300000, guid: 9787f98143cd5bc46944875312a27507, type: 3}
 --- !u!135 &5847998780837657652
 SphereCollider:
   m_ObjectHideFlags: 0
