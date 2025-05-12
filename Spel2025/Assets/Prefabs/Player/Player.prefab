@@ -466,6 +466,7 @@ MonoBehaviour:
   experienceBar: {fileID: 0}
   XPAmountText: {fileID: 0}
   levelText: {fileID: 0}
+  levelUpSound: {fileID: 8300000, guid: b561a25f69bf22f45973f258a85f1782, type: 3}
 --- !u!114 &4041360144664785331
 MonoBehaviour:
   m_ObjectHideFlags: 0

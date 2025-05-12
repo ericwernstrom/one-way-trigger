@@ -21,6 +21,15 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI levelText;
 
+    // AUDIO
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip levelUpSound;
+
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void AddXP(int amount)
     {
@@ -32,6 +41,9 @@ public class PlayerStats : MonoBehaviour
         {
             levelProgressXP -= xpToNextLevel;
             level++;
+
+            // AUDIO: Play level up sound
+            audioSource.PlayOneShot(levelUpSound);
 
             // Increase XP requirement for next level (scaling)
             xpToNextLevel += 50;
