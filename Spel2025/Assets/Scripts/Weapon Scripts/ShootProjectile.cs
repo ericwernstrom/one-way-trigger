@@ -190,7 +190,15 @@ public class ShootProjectile : MonoBehaviour
 
         // AUDIO
         // Play sound of weapon firing
-        source.PlayOneShot(source.clip);
+        if (source != null && source.clip != null)
+        {
+            source.PlayOneShot(source.clip);
+
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource or AudioClip is not set.");
+        }
     }
 
     private void CycleProjectile()
