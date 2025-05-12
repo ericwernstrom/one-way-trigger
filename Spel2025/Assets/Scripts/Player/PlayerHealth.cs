@@ -27,6 +27,15 @@ public class PlayerHealth : MonoBehaviour
     // AUDIO
     [SerializeField]
     private AudioClip death_sound;
+    private AudioClip hit_sound;
+    private AudioSource audioSource;
+
+    public void Start()
+    {
+        // AUDIO
+        audioSource = GetComponent<AudioSource>();
+        hit_sound = audioSource.clip;
+    }
 
     // Method to decrease health
     public void TakeDamage(int damage)
@@ -35,6 +44,8 @@ public class PlayerHealth : MonoBehaviour
         //Change the healthBar
         healthBar.value = health;
 
+        // AUDIO 
+        audioSource.PlayOneShot(hit_sound);
         // Dead if health is less than or equal to zero
         if (health <= 0 && !isDead)
         {

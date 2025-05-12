@@ -2931,18 +2931,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1133013562435712286, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1133013562435712286, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1133013562435712286, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1133013562435712286, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
       objectReference: {fileID: 0}
@@ -2983,10 +2971,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2288056903198719489, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: XPAmount
-      value: 
-      objectReference: {fileID: 774251724}
-    - target: {fileID: 2288056903198719489, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
       propertyPath: levelText
       value: 
       objectReference: {fileID: 774251723}
@@ -2998,54 +2982,18 @@ PrefabInstance:
       propertyPath: experienceBar
       value: 
       objectReference: {fileID: 774251725}
-    - target: {fileID: 2288056903198719489, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: experienceText
-      value: 
-      objectReference: {fileID: 774251724}
-    - target: {fileID: 2653606543802208761, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: airFriction
-      value: 3.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2653606543802208761, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
       propertyPath: cameraObject
       value: 
       objectReference: {fileID: 2023865590}
-    - target: {fileID: 2653606543802208761, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: jumpVelocity
-      value: 1250
-      objectReference: {fileID: 0}
-    - target: {fileID: 2653606543802208761, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: movementSpeed
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 2653606543802208761, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: groundFriction
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2653606543802208761, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: fallingVelocity
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2653606543802208761, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: leapingVelocity
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 4041360144664785331, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 774251726}
     - target: {fileID: 4041360144664785331, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: death_sound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3fbe5f1ae87a4a8419c9884ccfb30ace, type: 3}
-    - target: {fileID: 4041360144664785331, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 24742585}
-    - target: {fileID: 4080182801879499280, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
-      propertyPath: 'prefabs.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2465279930727178327, guid: c40b7465bbb25ea48b558af4e094ec88, type: 3}
     - target: {fileID: 8199195418982267448, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
       propertyPath: m_Name
       value: Player (1)
