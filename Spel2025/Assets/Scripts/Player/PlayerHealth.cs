@@ -13,16 +13,18 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField]
-    private int health = 100; // Player's starting health
-    [SerializeField]
-    private Slider healthBar;
-    [SerializeField]
-    private GameManagerScript gameManager;
-    [SerializeField]
-    private int maxHealth = 100; // Player's current max health
+    [SerializeField] private int health = 100; // Player's starting health
+    [SerializeField] private Slider healthBar;
+    [SerializeField] private GameManagerScript gameManager;
+    [SerializeField] private int maxHealth = 100; // Players max possible health
+    [SerializeField] private int currentHealthLevel = 0;
+    [SerializeField] private int maxLevel = 5; // Max level for health upgrades
 
     private bool isDead;
+
+    //HUD UI
+    [SerializeField]
+    TextMeshProUGUI hpAmountText;
 
     // AUDIO
     [SerializeField]
@@ -43,6 +45,8 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         //Change the healthBar
         healthBar.value = health;
+        //Change the health text
+        hpAmountText.text = health.ToString() + "/" + maxHealth.ToString();
 
         // AUDIO 
         audioSource.PlayOneShot(hit_sound);
@@ -59,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
             //Call the gameOver function from gameManager which starts the gameoverscreen
             gameManager.gameOver();
 
-            Debug.Log("Dead");
+            //Debug.Log("Dead");
         }
     }
 
@@ -67,13 +71,34 @@ public class PlayerHealth : MonoBehaviour
     {
         health += amount;
         healthBar.value = health;
+        //Update hpAmount text
+        hpAmountText.text = health.ToString() + "/" + maxHealth.ToString();
 
         if (health >= maxHealth)
         {
             health = maxHealth;
             healthBar.value = health;
+            hpAmountText.text = health.ToString() + "/" + maxHealth.ToString();
         }
     }
+    public void IncreaseMaxHealth()
+    {
+        if (currentHealthLevel < maxLevel)
+        {
+            currentHealthLevel++;
+            maxHealth += 20;
+            //Update healthbar
+            healthBar.maxValue = maxHealth;
+            healthBar.value = health;
+            //Update hpamount text
+            hpAmountText.text = health.ToString() + "/" + maxHealth.ToString();
+        }
+        else
+        {
+            Debug.Log("Max health level reached");
+        }
+    }
+
 
     void Respawn()
     {
