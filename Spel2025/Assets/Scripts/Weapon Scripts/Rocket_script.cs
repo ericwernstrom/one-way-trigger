@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Rocket_script : MonoBehaviour
 {
@@ -21,18 +22,10 @@ public class Rocket_script : MonoBehaviour
     private float rotation_speed;
 
     // AUDIO
-    private AudioSource audioSource;
+    [SerializeField]
     private AudioClip audioClip;
-
-
-
-
-    private void Start()
-    {
-        // AUDIO
-        audioSource = GetComponent<AudioSource>();
-        audioClip = audioSource.clip;
-    }
+    [SerializeField]
+    private AudioMixerGroup mixerGroup;
 
     private void Update()
     {
@@ -53,7 +46,7 @@ public class Rocket_script : MonoBehaviour
         GameObject explosion = (GameObject)Instantiate(explosion_prefab, transform.position, explosion_prefab.transform.rotation);
         // GameObject aftermath_obj = (GameObject)Instantiate(aftermath, transform.position, aftermath.transform.rotation);
 
-        AudioSource.PlayClipAtPoint(audioClip, transform.position);
+        AudioUtils.PlayClipAtPointToMixer(audioClip, transform.position, mixerGroup);
         Destroy(gameObject);
 
     }

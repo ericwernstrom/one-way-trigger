@@ -152,6 +152,7 @@ MonoBehaviour:
     m_Bits: 128
   fallAcceleration: 3
   pickup_sound: {fileID: 8300000, guid: 9787f98143cd5bc46944875312a27507, type: 3}
+  mixerGroup: {fileID: -6487121617573983767, guid: a53211a6be64f454c935b9abc5f8827a, type: 2}
 --- !u!135 &5847998780837657652
 SphereCollider:
   m_ObjectHideFlags: 0

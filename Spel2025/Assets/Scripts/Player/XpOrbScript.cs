@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem.HID;
 
 public class XPOrb : MonoBehaviour
@@ -24,7 +25,10 @@ public class XPOrb : MonoBehaviour
     private bool isAttracted = false;
 
     // AUDIO
-    public AudioClip pickup_sound;
+    [SerializeField]
+    private AudioClip pickup_sound;
+    [SerializeField]
+    private AudioMixerGroup mixerGroup;
 
     public void StartAttraction(Transform playerTransform)
     {
@@ -77,7 +81,7 @@ public class XPOrb : MonoBehaviour
             }
         }
         // AUDIO
-        AudioSource.PlayClipAtPoint(pickup_sound, transform.position);
+        AudioUtils.PlayClipAtPointToMixer(pickup_sound, transform.position, mixerGroup);
         Destroy(gameObject);
     }
 

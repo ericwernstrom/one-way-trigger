@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class HealthPickup : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class HealthPickup : MonoBehaviour
     // AUDIO
     [SerializeField]
     private AudioClip pickup_sound;
+    [SerializeField]
+    private AudioMixerGroup mixerGroup;
 
     void Update()
     {
@@ -38,7 +41,7 @@ public class HealthPickup : MonoBehaviour
         }
 
         // AUDIO
-        AudioSource.PlayClipAtPoint(pickup_sound, transform.position);
+        AudioUtils.PlayClipAtPointToMixer(pickup_sound, transform.position, mixerGroup);
         Destroy(gameObject);
     }
 
