@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Audio;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -25,8 +26,8 @@ public class PlayerStats : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField]
     private AudioClip levelUpSound;
-    [SerializeField, Range(0f, 1f)]
-    private float levelUpSoundVolume = 1f;
+    [SerializeField]
+    private AudioMixerGroup mixerGroup;
 
 
     public void Start()
@@ -46,7 +47,7 @@ public class PlayerStats : MonoBehaviour
             level++;
 
             // AUDIO: Play level up sound
-            audioSource.PlayOneShot(levelUpSound, levelUpSoundVolume);
+            AudioUtils.PlayClipAtPointToMixer(levelUpSound, transform.position, mixerGroup);
 
             // Increase XP requirement for next level (scaling)
             xpToNextLevel += 50;
