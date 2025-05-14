@@ -13,12 +13,12 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int health = 100; // Player's starting health
+    private int health = 100; // Player's starting health
     [SerializeField] private Slider healthBar;
     [SerializeField] private GameManagerScript gameManager;
-    [SerializeField] private int maxHealth = 100; // Players max possible health
-    [SerializeField] private int currentHealthLevel = 0;
-    [SerializeField] private int maxLevel = 5; // Max level for health upgrades
+    private int maxHealth = 100; // Players max possible health
+    private int currentHealthLevel = 0;
+    private int maxLevel = 5; // Max level for health upgrades
 
     private bool isDead;
 

@@ -11,9 +11,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     [SerializeField]
     private float movementSpeed = 7f;
-    [SerializeField]
     private int currentSpeedLevel = 0; // Current level for speed upgrades
-    [SerializeField]
     private int maxLevel = 5; // Max level for speed upgrades
     [SerializeField]
     private float rotationSpeed = 15f;

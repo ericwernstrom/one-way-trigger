@@ -40,7 +40,6 @@ public class LevelUpSelector : MonoBehaviour
     public void Button1()
     {
         playerHealth.IncreaseMaxHealth();
-        //GameManagerScript.Instance.chooseBuff();
     }
 
     public void Button2() 
