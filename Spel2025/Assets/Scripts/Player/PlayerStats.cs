@@ -25,6 +25,9 @@ public class PlayerStats : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField]
     private AudioClip levelUpSound;
+    [SerializeField, Range(0f, 1f)]
+    private float levelUpSoundVolume = 1f;
+
 
     public void Start()
     {
@@ -43,7 +46,7 @@ public class PlayerStats : MonoBehaviour
             level++;
 
             // AUDIO: Play level up sound
-            audioSource.PlayOneShot(levelUpSound);
+            audioSource.PlayOneShot(levelUpSound, levelUpSoundVolume);
 
             // Increase XP requirement for next level (scaling)
             xpToNextLevel += 50;
