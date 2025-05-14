@@ -23,17 +23,12 @@ public class PlayerStats : MonoBehaviour
     TextMeshProUGUI levelText;
 
     // AUDIO
-    private AudioSource audioSource;
     [SerializeField]
     private AudioClip levelUpSound;
     [SerializeField]
     private AudioMixerGroup mixerGroup;
 
-
-    public void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+   
 
     public void AddXP(int amount)
     {
