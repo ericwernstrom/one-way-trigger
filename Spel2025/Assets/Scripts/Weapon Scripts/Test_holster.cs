@@ -16,38 +16,56 @@ public class Test_holster : MonoBehaviour
     {
         if (prefabs.Length > 0)
         {
-            CycleToNextPrefab();
+            EquipPrefab(currentIndex);
         }
     }
 
     void Update()
     {
-        // Change the key to 'K' to cycle through prefabs
-        if (Input.GetKeyDown(KeyCode.K))
+        // Change weapon with number keys
+        for (int i = 0; i < Mathf.Min(9, prefabs.Length); i++)
         {
-            CycleToNextPrefab();
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+            {
+                EquipPrefab(i);
+                return;
+            }
+        }
+
+        // Mouse scroll wheel input
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (scroll > 0f)
+        {
+            CycleNext();
+        }
+        else if (scroll < 0f)
+        {
+            CyclePrevious();
         }
     }
 
-    void CycleToNextPrefab()
+    void EquipPrefab(int index)
     {
-        // Destroy the current prefab instance if it exists
+        if (index < 0 || index >= prefabs.Length) return;
+
         if (currentPrefabInstance != null)
         {
             Destroy(currentPrefabInstance);
         }
 
-        // Instantiate the next prefab in the list
+        currentIndex = index;
         currentPrefabInstance = Instantiate(prefabs[currentIndex], holster.transform.position, holster.transform.rotation, holster.transform);
+    }
 
-        //Shotgun rotation wrong
-        /*
-        if (prefabs[currentIndex].name == "Shotgun")
-        {
-            currentPrefabInstance.transform.rotation = Quaternion.Euler(0, 0, 0); // Or any desired rotation
-        }
-        */
-        // Update the index to point to the next prefab
-        currentIndex = (currentIndex + 1) % prefabs.Length;
+    void CycleNext()
+    {
+        int nextIndex = (currentIndex + 1) % prefabs.Length;
+        EquipPrefab(nextIndex);
+    }
+
+    void CyclePrevious()
+    {
+        int prevIndex = (currentIndex - 1 + prefabs.Length) % prefabs.Length;
+        EquipPrefab(prevIndex);
     }
 }

@@ -98,7 +98,7 @@ public class ShootProjectile : MonoBehaviour
             */
 
             // Cycle through projectiles if right mouse button (or another button) is pressed
-            if (Input.GetKeyDown(KeyCode.B))
+            if (Input.GetKeyDown(KeyCode.C))
             {
                 CycleProjectile();
             }
