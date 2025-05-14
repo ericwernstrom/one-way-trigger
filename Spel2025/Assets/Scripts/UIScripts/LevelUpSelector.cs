@@ -2,16 +2,29 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using static LevelUpSelector;
+using TMPro;
 
 public class LevelUpSelector : MonoBehaviour
 {
+    [System.Serializable]
+    public struct Upgrade
+    {
+        //Action stores a void function with no parameters
+        public Action action;
+        public string description;
+        public Sprite icon;
+    }
 
     private PlayerHealth playerHealth;
     private ShootProjectile shootProjectile;
     private PlayerLocomotion playerMoveSpeed;
 
     // This list will store the shuffled upgrade actions
-    private List<Action> upgradeActions = new List<Action>();
+    private List<Upgrade> upgrades = new List<Upgrade>();
+    // Reference to your UI buttons (assign in inspector)
+    [SerializeField] private Button[] upgradeButtons;
 
     private void Awake()
     {
@@ -19,25 +32,55 @@ public class LevelUpSelector : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         playerMoveSpeed = player.GetComponent<PlayerLocomotion>();
 
-        // Prepare upgrade actions
-        upgradeActions.Add(() => playerHealth.IncreaseMaxHealth());
-        upgradeActions.Add(() => playerMoveSpeed.SpeedUpgrade());
-        upgradeActions.Add(() => GravityBullet_script.DamageUpgrade());
-        // You can add more here later, like:
-        // upgradeActions.Add(() => shootProjectile.FireRateUpgrade());
+        // Prepare upgrades with all three components
+        upgrades.Add(new Upgrade
+        {
+            action = () => playerHealth.IncreaseMaxHealth(),
+            description = "MAX HEALTH +",
+            icon = Resources.Load<Sprite>("Sprites/Health_up") // Load from Resources folder
+        });
 
-        //RandomizeUpgradeList();
+        upgrades.Add(new Upgrade
+        {
+            action = () => playerMoveSpeed.SpeedUpgrade(),
+            description = "MOVE SPEED +",
+            icon = Resources.Load<Sprite>("Sprites/Speed_up")
+        });
+
+        upgrades.Add(new Upgrade
+        {
+            action = () => GravityBullet_script.DamageUpgrade(),
+            description = "DAMAGE +",
+            icon = Resources.Load<Sprite>("Sprites/Damage_up")
+        });
+
+        RandomizeUpgradeList();
     }
-    /*
+
     private void RandomizeUpgradeList()
     {
         // Fisher-Yates Shuffle
-        for (int i = upgradeActions.Count - 1; i > 0; i--)
+        for (int i = upgrades.Count - 1; i > 0; i--)
         {
             int randIndex = UnityEngine.Random.Range(0, i + 1);
-            var temp = upgradeActions[i];
-            upgradeActions[i] = upgradeActions[randIndex];
-            upgradeActions[randIndex] = temp;
+            var temp = upgrades[i];
+            upgrades[i] = upgrades[randIndex];
+            upgrades[randIndex] = temp;
+        }
+
+        // Update each button
+        for (int i = 0; i < upgradeButtons.Length; i++)
+        {
+            if (i < upgrades.Count)
+            {
+                // Get the button child Text and Image components
+                TextMeshProUGUI buttonText = upgradeButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+                Image buttonIcon = upgradeButtons[i].GetComponentInChildren<Image>();
+
+                // Update them
+                buttonText.text = upgrades[i].description;
+                buttonIcon.sprite = upgrades[i].icon;
+            }
         }
     }
 
@@ -49,34 +92,11 @@ public class LevelUpSelector : MonoBehaviour
 
     private void UseUpgrade(int index)
     {
-        if (index < upgradeActions.Count)
+        if (index < upgrades.Count)
         {
-            upgradeActions[index]?.Invoke();
+            upgrades[index].action?.Invoke();
             RandomizeUpgradeList();
         }
-    }
-    */
-
-    /* 
-    
-    Kanske byta ut nedanstående funktioner till en per button sen spara alla upgrades i en lista så att
-    Lista innehåller exempelvis. hpUpgrade =  playerHealth.IncreaseMaxHealth(); osv.
-    Sen randomize och 
-    
-    
-    */
-    public void Button1()
-    {
-        playerHealth.IncreaseMaxHealth();
-    }
-
-    public void Button2() 
-    { 
-        playerMoveSpeed.SpeedUpgrade();
-    }
-    public void Button3()
-    {
-        GravityBullet_script.DamageUpgrade();
     }
 
 }
