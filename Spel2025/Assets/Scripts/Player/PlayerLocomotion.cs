@@ -12,6 +12,10 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 7f;
     [SerializeField]
+    private int currentSpeedLevel = 0; // Current level for speed upgrades
+    [SerializeField]
+    private int maxLevel = 5; // Max level for speed upgrades
+    [SerializeField]
     private float rotationSpeed = 15f;
     [SerializeField]
     private Transform cameraObject;
@@ -161,6 +165,15 @@ public class PlayerLocomotion : MonoBehaviour
         if (isGrounded)
         {
             playerRigidbody.AddForce(0, jumpVelocity, 0);
+        }
+    }
+
+    public void SpeedUpgrade() 
+    { 
+        if (currentSpeedLevel < maxLevel)
+        {
+            movementSpeed += 10f;
+            currentSpeedLevel++;
         }
     }
 }

@@ -201,6 +201,15 @@ public class ShootProjectile : MonoBehaviour
         }
     }
 
+    //Upgrade rate of fire
+    /*
+    public static void FireRateUpgrade()
+    {
+        rate_of_fire *= 0.7f;
+    }
+    */
+
+    //Change projectile prefab if weapon has multiple projectiles
     private void CycleProjectile()
     {
         if (projectile_prefabs.Count > 1)

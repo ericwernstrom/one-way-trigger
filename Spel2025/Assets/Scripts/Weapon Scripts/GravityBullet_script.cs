@@ -10,7 +10,11 @@ public class GravityBullet_script : MonoBehaviour
 
     [SerializeField] private GameObject hit_particles;
 
-    [SerializeField] private float damage = 20f;
+    //Gravity bullet damage
+    [SerializeField] private static float damage = 20f;
+    [SerializeField] private static int maxLevel = 5;
+    [SerializeField] private static int currentDamageLevel = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,15 @@ public class GravityBullet_script : MonoBehaviour
     private void FixedUpdate()
     {
         //Gravity();
+    }
+    public static void DamageUpgrade()
+    {
+        if (currentDamageLevel < maxLevel)
+        {
+            damage += 10f;
+            currentDamageLevel++;
+        }
+        
     }
 
     private void OnTriggerStay(Collider other)
