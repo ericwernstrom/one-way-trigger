@@ -18,6 +18,13 @@ public class StickyBomb : MonoBehaviour
     private Rigidbody rb;
     private Vector3 originalScale;
 
+    // AUDIO
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip timer_sound;
+    [SerializeField] private AudioClip throwing_sound;
+    [SerializeField] private AudioClip sticking_sound;
+    [SerializeField]  private AudioClip explostion_sound;
+
 
     void Start()
     {
@@ -27,6 +34,14 @@ public class StickyBomb : MonoBehaviour
 
         // Start timer for explosion
         Invoke("Explode", explosionDelay);
+
+        // AUDIO
+        audioSource = GetComponent<AudioSource>();
+        // todo: play throwing sfx
+
+        // todo: Start playing timer sound
+        //audioSource.Play();
+
 
     }
 
@@ -62,6 +77,8 @@ public class StickyBomb : MonoBehaviour
         {
             isStuck = true;
 
+            // AUDIO: Play stuck sound
+            audioSource.PlayOneShot(sticking_sound);
             if (collision.rigidbody)
             {
                 // Add a HingeJoint component to the gameobject that has the script

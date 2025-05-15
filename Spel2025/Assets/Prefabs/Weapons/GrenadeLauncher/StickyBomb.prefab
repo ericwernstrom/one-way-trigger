@@ -125,6 +125,10 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3566023107158436449, guid: 23f0212f228f84d2b8aef9a2cafc35a3, type: 3}
   explosion_hitbox: {fileID: 6522417450078717207, guid: 71c10a0304ff9124192748bb09de519e, type: 3}
   explosionScale: 5
+  timer_sound: {fileID: 0}
+  throwing_sound: {fileID: 0}
+  sticking_sound: {fileID: 8300000, guid: e9819243fd2464fc3b640127f9c22c8c, type: 3}
+  explostion_sound: {fileID: 0}
 --- !u!54 &-2455059565195029297
 Rigidbody:
   m_ObjectHideFlags: 0
