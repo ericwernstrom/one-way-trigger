@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class StickyBomb : MonoBehaviour
 {
@@ -20,10 +21,17 @@ public class StickyBomb : MonoBehaviour
 
     // AUDIO
     private AudioSource audioSource;
-    [SerializeField] private AudioClip timer_sound;
-    [SerializeField] private AudioClip throwing_sound;
-    [SerializeField] private AudioClip sticking_sound;
-    [SerializeField]  private AudioClip explostion_sound;
+    
+    // Audio Sources
+    [SerializeField] private AudioSource timerSource;
+    [SerializeField] private AudioSource explosionSource;
+    [SerializeField] private AudioSource stickingSource;
+
+    // Mixer group for external audio source
+    [SerializeField] private AudioMixerGroup explosionMixer;
+
+
+
 
 
     void Start()
@@ -35,14 +43,8 @@ public class StickyBomb : MonoBehaviour
         // Start timer for explosion
         Invoke("Explode", explosionDelay);
 
-        // AUDIO
-        audioSource = GetComponent<AudioSource>();
-        // todo: play throwing sfx
-
-        // todo: Start playing timer sound
-        //audioSource.Play();
-
-
+        // Start playing timer sound
+        timerSource.Play();
     }
 
     void Explode()
@@ -60,6 +62,9 @@ public class StickyBomb : MonoBehaviour
 
             // Destroy the grenade object
             Destroy(gameObject);
+
+            // AUDIO: Play explosion sound
+            AudioUtils.PlayClipAtPointToMixer(explosionSource.clip, transform.position, explosionMixer);
         }
     }
 
@@ -78,7 +83,8 @@ public class StickyBomb : MonoBehaviour
             isStuck = true;
 
             // AUDIO: Play stuck sound
-            audioSource.PlayOneShot(sticking_sound);
+            stickingSource.Play();
+
             if (collision.rigidbody)
             {
                 // Add a HingeJoint component to the gameobject that has the script
