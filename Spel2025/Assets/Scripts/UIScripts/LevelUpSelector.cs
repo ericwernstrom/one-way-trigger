@@ -51,7 +51,14 @@ public class LevelUpSelector : MonoBehaviour
         {
             action = () => GravityBullet_script.DamageUpgrade(),
             description = "DAMAGE +",
-            icon = Resources.Load<Sprite>("Sprites/Damage_up")
+            icon = Resources.Load<Sprite>("Sprites/Gravity_upgrade")
+        });
+
+        upgrades.Add(new Upgrade
+        {
+            action = () => Rocket_script.RocketLevelUp(),
+            description = "ROCKET DAMAGE +",
+            icon = Resources.Load<Sprite>("Sprites/Explosive_upgrade")
         });
 
         RandomizeUpgradeList();

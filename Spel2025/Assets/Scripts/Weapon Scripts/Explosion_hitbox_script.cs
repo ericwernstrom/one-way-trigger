@@ -20,6 +20,15 @@ public class Explosion_hitbox_script : MonoBehaviour
     void Start()
     {
         starttime = Time.time;
+    }
+
+    public void Setup(float minDamage, float maxDamage, float minKnockback, float maxKnockback)
+    {
+        this.min_damage = minDamage;
+        this.max_damage = maxDamage;
+        this.min_knockback = minKnockback;
+        this.max_knockback = maxKnockback;
+
         damage_scaling = ((max_damage - min_damage) / transform.localScale.x);
         knockback_scaling = ((max_knockback - min_knockback) / transform.localScale.x);
     }
@@ -46,15 +55,27 @@ public class Explosion_hitbox_script : MonoBehaviour
             if (knockback < min_knockback) knockback = min_knockback;
             other.attachedRigidbody.AddForce(dir * knockback);
 
-            // deal damage
-            Health health = other.gameObject.GetComponent<Health>();
-            if (health != null)
+            // Apply damage using the bullet's damage value
+            float damage = max_damage - damage_scaling * mag;
+            if (damage < min_damage) damage = min_damage;
+            int roundedDamage = Mathf.RoundToInt(damage);
+
+            // Damage enemies
+            Health enemyHealth = other.gameObject.GetComponent<Health>();
+            if (enemyHealth != null)
             {
-                // Apply damage using the bullet's damage value
-                float damage = max_damage - damage_scaling * mag;
-                if (damage < min_damage) damage = min_damage;
-                health.TakeDamage(Mathf.Round(damage));
+
+                enemyHealth.TakeDamage(roundedDamage);
             }
+
+            // Damage player
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(roundedDamage);
+            }
+
+
         }
 
 

@@ -63,6 +63,12 @@ public class GameManagerScript : MonoBehaviour
 
     }
 
+    public void ResetAllUpgrades() 
+    {
+        GravityBullet_script.ResetUpgrade();
+        Rocket_script.ResetUpgrade();
+    }
+
     //Activates the GameOverScreen in Canvas
     public void gameOver()
     {
@@ -89,6 +95,7 @@ public class GameManagerScript : MonoBehaviour
     public void restart()
     {
         Time.timeScale = 1f;
+        ResetAllUpgrades();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         isPaused = false; //if restart without before dying
         Debug.Log("Restart");
@@ -98,6 +105,7 @@ public class GameManagerScript : MonoBehaviour
     public void mainMenu()
     {
         Time.timeScale = 1f;
+        ResetAllUpgrades();
         SceneManager.LoadScene("MainMenuScene");
         isPaused = false; //If return to main menu from paused screen
         Debug.Log("Main Menu");
