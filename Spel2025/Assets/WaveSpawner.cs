@@ -14,7 +14,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public List<Enemy> enemies = new List<Enemy>();
     public int currentWave;
-    public int waveValue;
+    public int waveBudget;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
 
     [SerializeField]
@@ -25,15 +25,19 @@ public class WaveSpawner : MonoBehaviour
     private float spawnInterval;
     private float spawnTimer;
 
-
-
-    // Start is called before the first frame update
+    
+    // Generate first wave and increase wave number (doesn't spawn enemies)
     void Start()
     {
-        GenerateWave();
+        if (waveTimer <= 0 || enemiesToSpawn.Count == 0)
+        {
+            currentWave++;
+            GenerateWave();
+            Debug.Log($"[START] Wave {currentWave} started! Enemies to spawn: {enemiesToSpawn.Count}");
+        }
     }
 
-    // Update is called once per frame
+    // Spawns enemies of the current wave at regular intervals. New wave is generated when the current one is completed (wave duration or all enemies killed).
     void FixedUpdate()
     {
         if (spawnTimer > 0)
@@ -41,54 +45,68 @@ public class WaveSpawner : MonoBehaviour
             spawnTimer -= Time.fixedDeltaTime;
             waveTimer -= Time.fixedDeltaTime;
         }
-        else
+        else if (enemiesToSpawn.Count > 0)
         {
-            if (enemiesToSpawn.Count > 0)
-            {
-                GameObject enemy = enemiesToSpawn[0];
-                enemiesToSpawn.RemoveAt(0);
-                // Calculate random spawn point
-                int randomIndex = Random.Range(0, enemies.Count);
-                Transform spawnPoint = spawnPoints[randomIndex];
-                // Spawn enemy
-                Instantiate(enemy, spawnPoint.position, Quaternion.identity);
-                // Reset spawn timer
-                spawnTimer = spawnInterval;
-            }
+            GameObject enemy = enemiesToSpawn[0];
+            enemiesToSpawn.RemoveAt(0);
+
+            // Calculate random spawn point
+            int randomIndex = Random.Range(0, spawnPoints.Count);
+            Transform spawnPoint = spawnPoints[randomIndex];
+
+            // Spawn enemy
+            Instantiate(enemy, spawnPoint.position, Quaternion.identity);
+
+            // Reset spawn timer
+            spawnTimer = spawnInterval;
+        }
+
+        // Is it time to generate a new wave?
+        if (waveTimer <= 0 || enemiesToSpawn.Count == 0)
+        {
+            currentWave++;
+            GenerateWave();
+           // Debug.Log($"[NEXT WAVE] Wave {currentWave} started! Enemies to spawn: {enemiesToSpawn.Count}");
+            //Debug.Log($"Spawn INterval: {spawnInterval} seconds.");
         }
     }
 
     public void GenerateWave()
     {
-        waveValue = currentWave * 10;   // Higher wave value for more enemies
+        // Calculate the budget for the wave
+        waveBudget = Mathf.FloorToInt(Mathf.Pow(1.25f, currentWave) * 10f);
+
         GenerateEnemies();
 
-        spawnInterval = waveDuration / enemiesToSpawn.Count;    // The time between spawning each enemy
-        waveTimer = waveDuration; // The time until the wave ends
+        // Adjust spawn interval dynamically
+        float minSpawnInterval = 0.5f;
+        float maxSpawnInterval = 3f;
+        float difficulty = Mathf.Clamp01(currentWave / 20f);
+        spawnInterval = Mathf.Lerp(maxSpawnInterval, minSpawnInterval, difficulty);
+
+        waveTimer = waveDuration;
     }
 
     public void GenerateEnemies()
     {
         List<GameObject> generatedEnemies = new List<GameObject>();
-        while(waveValue > 0)
+        int attempts = 0;
+
+        while (waveBudget > 0 && attempts < 1000) // safety limit
         {
-            // Randomly select an enemy from the list
             int randomIndex = Random.Range(0, enemies.Count);
             Enemy enemy = enemies[randomIndex];
 
-            // Check if the enemy can be spawned with the current wave value
-            if (waveValue - enemy.cost >= 0)
+            if (waveBudget - enemy.cost >= 0)
             {
-                waveValue -= enemy.cost;
+                waveBudget -= enemy.cost;
                 generatedEnemies.Add(enemy.enemyPrefab);
+                //Debug.Log($"[ENEMY SELECTED] Added {enemy.enemyPrefab.name} (cost: {enemy.cost}) | Remaining value: {waveBudget}");
             }
-            else
-            {
-                break;
-                // Todo: If the enemy cannot be spawned, remove it from the list instead of break?
-                //enemies.RemoveAt(randomIndex);
-            }
+
+            attempts++;
         }
+
         enemiesToSpawn.Clear();
         enemiesToSpawn = generatedEnemies;
     }
