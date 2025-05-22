@@ -62,7 +62,6 @@ MonoBehaviour:
   - {fileID: 3160278042841200982}
   - {fileID: 544522015893541069}
   - {fileID: 5157925581251359098}
-  - {fileID: 0}
   waveDuration: 30
 --- !u!1 &1397703629496574103
 GameObject:
