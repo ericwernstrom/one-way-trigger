@@ -11,7 +11,7 @@ public class Grenade : MonoBehaviour
     [SerializeField]
     private GameObject explosion_hitbox;
     [SerializeField]
-    public static float explosionScale = 2f; //Scale of the explosion area
+    public static float explosionScale = 3f; //Scale of the explosion area
 
     private bool hasExploded = false;
 

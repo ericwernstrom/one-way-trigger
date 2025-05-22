@@ -5,7 +5,6 @@ using UnityEngine.Audio;
 
 public class HealthPickup : MonoBehaviour
 {
-    [SerializeField]
     private int HealingAmount = 25;
 
     [SerializeField]

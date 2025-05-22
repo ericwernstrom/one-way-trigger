@@ -39,19 +39,19 @@ public class PlayerStats : MonoBehaviour
         explosionCurrentLevel++;
         if (explosionCurrentLevel < explosionMaxLevel)
         {
-            Rocket_script.explosionScale += 0.5f;
-            Grenade.explosionScale += 0.5f;
-            StickyBomb.explosionScale += 0.5f;
-            Weapon_Explosion.max_scale += 0.5f;
+            Rocket_script.explosionScale += 1f;
+            Grenade.explosionScale += 1f;
+            StickyBomb.explosionScale += 1f;
+            Weapon_Explosion.max_scale += 1f;
         }
     }
 
     public static void ResetUpgrades() 
     { 
         explosionCurrentLevel = 0;
-        Rocket_script.explosionScale = 2f;
-        Grenade.explosionScale = 2f;
-        StickyBomb.explosionScale = 2f;
+        Rocket_script.explosionScale = 3f;
+        Grenade.explosionScale = 3f;
+        StickyBomb.explosionScale = 3f;
         Weapon_Explosion.max_scale = 3f;
     }
 
