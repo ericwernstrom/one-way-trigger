@@ -14,7 +14,7 @@ public class Rocket_script : MonoBehaviour
     [SerializeField]
     private GameObject aftermath;
     [SerializeField]
-    public static float explosionScale = 5f;
+    public static float explosionScale = 2f;
     [SerializeField]
     private float rotation_speed;
 

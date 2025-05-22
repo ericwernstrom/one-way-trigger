@@ -48,20 +48,6 @@ public class TrackingRocketScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Stun from stun_hitbox prefab
-        /*
-        if (isStunned)
-        {
-            stunTimer -= Time.deltaTime;
-            if (stunTimer <= 0f)
-            {
-                isStunned = false;
-                // Resume behavior
-            }
-            return;
-        }
-        */
-
         if (isTracking)
         {
             TrackTarget();

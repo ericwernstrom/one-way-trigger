@@ -46,7 +46,7 @@ public class LevelUpSelector : MonoBehaviour
         {
             action = () => playerMoveSpeed.SpeedUpgrade(),
             description = "MOVE SPEED +",
-            icon = Resources.Load<Sprite>("Sprites/Speed_up")
+            icon = Resources.Load<Sprite>("Sprites/Rocket_boots")
         });
 
         //Gravity Bullet Upgrade
@@ -62,7 +62,7 @@ public class LevelUpSelector : MonoBehaviour
         {
             action = () => Weapons_Explosion_script.ExplosionLevelUp(),
             description = "EXPLOSIVE DAMAGE +",
-            icon = Resources.Load<Sprite>("Sprites/Damage_up")
+            icon = Resources.Load<Sprite>("Sprites/Explosion_damage")
         });
 
         //Explosion Scale Upgrade
