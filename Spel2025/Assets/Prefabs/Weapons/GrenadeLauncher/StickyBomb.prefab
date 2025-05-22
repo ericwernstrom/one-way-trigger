@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionDelay: 3
-  explosionPrefab: {fileID: 3566023107158436449, guid: 23f0212f228f84d2b8aef9a2cafc35a3, type: 3}
+  explosionPrefab: {fileID: 5747846445992895030, guid: 29f730f83f1e6314dbbca62b6612b4d1, type: 3}
   explosion_hitbox: {fileID: 5764815135160700365, guid: f1ec463f7e8bbe9499dbfe4d8b0e5c72, type: 3}
   timerSource: {fileID: 4111447109449582771}
   explosionSource: {fileID: -4588981288526045937}
