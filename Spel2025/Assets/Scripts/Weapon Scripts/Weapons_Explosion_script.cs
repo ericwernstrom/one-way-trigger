@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosion_hitbox_script : MonoBehaviour
+public class Weapons_Explosion_script : MonoBehaviour
 {
     [SerializeField]
-    private float max_damage = 30f;
+    private static float max_damage = 60f;
     [SerializeField]
-    private float min_damage = 15f;
+    private static float min_damage = 40f;
     [SerializeField]
-    private float max_knockback = 30f;
+    private static float max_knockback = 20f;
     [SerializeField]
-    private float min_knockback = 15f;
+    private static float min_knockback = 10f;
+    [SerializeField]
+    private static int maxLevel = 5;
+    [SerializeField]
+    private static int currentLevel = 0;
 
     private float starttime;
     private float damage_scaling;
@@ -28,15 +32,35 @@ public class Explosion_hitbox_script : MonoBehaviour
     void Update()
     {
         // Destroy after time of spawn if nothing hits the hitbox
-        if ((Time.time - starttime) > 0.2f) 
+        if ((Time.time - starttime) > 0.2f)
             Destroy(gameObject);
 
+    }
+
+    public static void ExplosionLevelUp()
+    {
+        if (currentLevel < maxLevel)
+        {
+            currentLevel++;
+            min_damage += 100f;
+            max_damage += 100f;
+            min_knockback += 5f;
+            max_knockback += 5f;
+        }
+    }
+
+    public static void ResetUpgrade()
+    {
+        currentLevel = 0;
+        min_damage = 40f;
+        max_damage = 60f;
+        min_knockback = 10f;
+        max_knockback = 20f;
     }
 
     private void OnTriggerStay(Collider other)
     {
 
-        
         if (other.attachedRigidbody != null)
         {
             // Make objects hit by the hitbox be blown back in the direction out of the explosion

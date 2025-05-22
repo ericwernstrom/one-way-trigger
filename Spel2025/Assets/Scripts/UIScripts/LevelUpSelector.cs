@@ -33,6 +33,7 @@ public class LevelUpSelector : MonoBehaviour
         playerMoveSpeed = player.GetComponent<PlayerLocomotion>();
 
         // Prepare upgrades with all three components
+        //Health Upgrade
         upgrades.Add(new Upgrade
         {
             action = () => playerHealth.IncreaseMaxHealth(),
@@ -40,6 +41,7 @@ public class LevelUpSelector : MonoBehaviour
             icon = Resources.Load<Sprite>("Sprites/Health_up") // Load from Resources folder
         });
 
+        //Movement speed Upgrade
         upgrades.Add(new Upgrade
         {
             action = () => playerMoveSpeed.SpeedUpgrade(),
@@ -47,17 +49,27 @@ public class LevelUpSelector : MonoBehaviour
             icon = Resources.Load<Sprite>("Sprites/Speed_up")
         });
 
+        //Gravity Bullet Upgrade
         upgrades.Add(new Upgrade
         {
             action = () => GravityBullet_script.DamageUpgrade(),
-            description = "DAMAGE +",
+            description = "GRAVITY GUN DAMAGE +",
             icon = Resources.Load<Sprite>("Sprites/Gravity_upgrade")
         });
 
+        //Rocket Upgrade
         upgrades.Add(new Upgrade
         {
-            action = () => Rocket_script.RocketLevelUp(),
-            description = "ROCKET DAMAGE +",
+            action = () => Weapons_Explosion_script.ExplosionLevelUp(),
+            description = "EXPLOSIVE DAMAGE +",
+            icon = Resources.Load<Sprite>("Sprites/Damage_up")
+        });
+
+        //Explosion Scale Upgrade
+        upgrades.Add(new Upgrade
+        {
+            action = () => PlayerStats.ExplosionScaleUpgrade(),
+            description = "EXPLOSION SCALE +",
             icon = Resources.Load<Sprite>("Sprites/Explosive_upgrade")
         });
 

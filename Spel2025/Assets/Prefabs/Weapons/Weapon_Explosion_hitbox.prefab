@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6522417450078717207
+--- !u!1 &5764815135160700365
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6703305367495745685}
-  - component: {fileID: 3076467042716470981}
-  - component: {fileID: 6216918774943086074}
+  - component: {fileID: 8439691940308701703}
+  - component: {fileID: 7376912149547947367}
+  - component: {fileID: 9114709230368277986}
   m_Layer: 0
-  m_Name: Explosion_hitbox
+  m_Name: Weapon_Explosion_hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6703305367495745685
+--- !u!4 &8439691940308701703
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6522417450078717207}
+  m_GameObject: {fileID: 5764815135160700365}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,13 +33,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &3076467042716470981
+--- !u!135 &7376912149547947367
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6522417450078717207}
+  m_GameObject: {fileID: 5764815135160700365}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -54,19 +54,15 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6216918774943086074
+--- !u!114 &9114709230368277986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6522417450078717207}
+  m_GameObject: {fileID: 5764815135160700365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0660eb44cc87d94438237a08aec251f6, type: 3}
+  m_Script: {fileID: 11500000, guid: d7d522fc4feefd44cb75d7074b7e48f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_damage: 30
-  min_damage: 15
-  max_knockback: 1000
-  min_knockback: 300

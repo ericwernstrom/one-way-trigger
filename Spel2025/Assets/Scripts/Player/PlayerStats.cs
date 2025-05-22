@@ -14,6 +14,12 @@ public class PlayerStats : MonoBehaviour
     private int levelProgressXP = 0; // XP earned since last level-up
     private int maxXP = 100;
 
+    //Explosion upgrade variables
+    [SerializeField]
+    private static int explosionMaxLevel = 5;
+    [SerializeField]
+    private static int explosionCurrentLevel = 0; // Current level for explosion upgrades
+
     //HUD components
     [SerializeField]
     private Slider experienceBar;
@@ -28,7 +34,24 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private AudioMixerGroup mixerGroup;
 
-   
+    public static void ExplosionScaleUpgrade() 
+    { 
+        explosionCurrentLevel++;
+        if (explosionCurrentLevel < explosionMaxLevel)
+        {
+            Rocket_script.explosionScale += 1f;
+            Grenade.explosionScale += 1f;
+            StickyBomb.explosionScale += 1f;
+        }
+    }
+
+    public static void ResetUpgrades() 
+    { 
+        explosionCurrentLevel = 0;
+        Rocket_script.explosionScale = 5f;
+        Grenade.explosionScale = 5f;
+        StickyBomb.explosionScale = 5f;
+    }
 
     public void AddXP(int amount)
     {

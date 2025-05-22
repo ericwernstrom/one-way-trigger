@@ -66,7 +66,8 @@ public class GameManagerScript : MonoBehaviour
     public void ResetAllUpgrades() 
     {
         GravityBullet_script.ResetUpgrade();
-        Rocket_script.ResetUpgrade();
+        Weapons_Explosion_script.ResetUpgrade();
+        PlayerStats.ResetUpgrades();
     }
 
     //Activates the GameOverScreen in Canvas

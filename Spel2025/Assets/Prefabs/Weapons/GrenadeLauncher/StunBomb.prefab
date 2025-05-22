@@ -150,4 +150,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionDelay: 1.6
   stun_hitbox: {fileID: 9073603291229672218, guid: 706f36b2ca59f46d5a37aa6d9d97aad3, type: 3}
-  explosionScale: 20
+  explosionScale: 15

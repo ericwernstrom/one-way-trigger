@@ -150,5 +150,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionDelay: 2
   explosionPrefab: {fileID: 3566023107158436449, guid: 23f0212f228f84d2b8aef9a2cafc35a3, type: 3}
-  explosion_hitbox: {fileID: 6522417450078717207, guid: 71c10a0304ff9124192748bb09de519e, type: 3}
-  explosionScale: 5
+  explosion_hitbox: {fileID: 5764815135160700365, guid: f1ec463f7e8bbe9499dbfe4d8b0e5c72, type: 3}

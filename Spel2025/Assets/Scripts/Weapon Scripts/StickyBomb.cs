@@ -12,7 +12,7 @@ public class StickyBomb : MonoBehaviour
     [SerializeField]
     private GameObject explosion_hitbox;
     [SerializeField]
-    private float explosionScale = 1.0f; // Scale of the explosion area
+    public static float explosionScale = 5f; // Scale of the explosion area
 
     private bool hasExploded = false;
     private bool isStuck = false;
