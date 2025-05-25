@@ -3852,7 +3852,7 @@ MonoBehaviour:
     currentWeight: 0
   - data: {fileID: 11400000, guid: d673763ef3beb8b4b8dd49042480a5a7, type: 2}
     currentWeight: 0
-  initialSpawnInterval: 3
+  initialSpawnInterval: 1.5
   minSpawnInterval: 0.5
   spawnIntervalDecreaseRate: 0.05
   difficultyIncreaseInterval: 5
@@ -6458,63 +6458,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6570232094443547779, guid: 1b169780afbb59943ba4f51dfd99ba9f, type: 3}
   m_PrefabInstance: {fileID: 1820601030}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1827967213
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1785418411595369664, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.993216
-      objectReference: {fileID: 0}
-    - target: {fileID: 1785418411595369664, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1785418411595369664, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.538252
-      objectReference: {fileID: 0}
-    - target: {fileID: 1785418411595369664, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.02184101
-      objectReference: {fileID: 0}
-    - target: {fileID: 1785418411595369664, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1785418411595369664, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.9997615
-      objectReference: {fileID: 0}
-    - target: {fileID: 1785418411595369664, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1785418411595369664, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1785418411595369664, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -182.503
-      objectReference: {fileID: 0}
-    - target: {fileID: 1785418411595369664, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246806222719837848, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
-      propertyPath: m_Name
-      value: AI-Nav_TankHomingEnemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f4cb3e3cda16aff47828eceb6856a3e3, type: 3}
 --- !u!43 &1909090445
 Mesh:
   m_ObjectHideFlags: 0
@@ -7590,4 +7533,3 @@ SceneRoots:
   - {fileID: 579806315}
   - {fileID: 14859695}
   - {fileID: 594549669}
-  - {fileID: 1827967213}
