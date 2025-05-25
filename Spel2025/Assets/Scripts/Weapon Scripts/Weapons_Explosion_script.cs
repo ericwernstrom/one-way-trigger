@@ -5,15 +5,15 @@ using UnityEngine;
 public class Weapons_Explosion_script : MonoBehaviour
 {
     [SerializeField]
-    private static float max_damage = 20f;
+    private static float max_damage = 18f;
     [SerializeField]
-    private static float min_damage = 15f;
+    private static float min_damage = 12f;
     [SerializeField]
     private static float max_knockback = 20f;
     [SerializeField]
     private static float min_knockback = 10f;
     [SerializeField]
-    private static int maxLevel = 10;
+    private static int maxLevel = 5;
     [SerializeField]
     private static int currentLevel = 0;
 
@@ -46,8 +46,8 @@ public class Weapons_Explosion_script : MonoBehaviour
         if (currentLevel < maxLevel)
         {
             currentLevel++;
-            min_damage += 5f;
-            max_damage += 5f;
+            min_damage += 4f;
+            max_damage += 4f;
             min_knockback += 5f;
             max_knockback += 5f;
         }
@@ -56,8 +56,8 @@ public class Weapons_Explosion_script : MonoBehaviour
     public static void ResetUpgrade()
     {
         currentLevel = 0;
-        min_damage = 15f;
-        max_damage = 20f;
+        min_damage = 12f;
+        max_damage = 18f;
         min_knockback = 10f;
         max_knockback = 20f;
     }
