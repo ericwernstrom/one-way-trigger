@@ -8,7 +8,7 @@ public class Weapon_Explosion : MonoBehaviour
   
     private float instantiationInterval = 0.02f; // Set this to the desired interval between instantiations
   
-    public static float max_scale = 3f;
+    public static float max_scale = 2.5f;
 
     private float scale_modifier = 0.1f;
   
