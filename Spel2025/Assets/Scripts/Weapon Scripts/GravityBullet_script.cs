@@ -41,7 +41,7 @@ public class GravityBullet_script : MonoBehaviour
     {
         if (currentLevel < maxLevel)
         {
-            damage += 3f;
+            damage += 4f;
             currentLevel++;
         }
         
@@ -50,7 +50,7 @@ public class GravityBullet_script : MonoBehaviour
     public static void ResetUpgrade()
     {
         currentLevel = 0;
-        damage = 5f;
+        damage = 8f;
     }
 
     private void OnTriggerStay(Collider other)

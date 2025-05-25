@@ -174,7 +174,7 @@ public class PlayerLocomotion : MonoBehaviour
     { 
         if (currentSpeedLevel < maxLevel)
         {
-            movementSpeed += 10f;
+            movementSpeed += 5f;
             currentSpeedLevel++;
         }
     }
