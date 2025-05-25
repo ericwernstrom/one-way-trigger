@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class TrackingRocketScript : MonoBehaviour
 {
@@ -32,6 +33,11 @@ public class TrackingRocketScript : MonoBehaviour
     private float stunTimer = 0f;
     [SerializeField]
     private float stunDuration = 2f;
+
+    [SerializeField]
+    private AudioMixerGroup mixerGroup;
+    [SerializeField]
+    private AudioClip explosionClip;
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +105,8 @@ public class TrackingRocketScript : MonoBehaviour
 
         GameObject explosion = (GameObject)Instantiate(explosion_prefab, transform.position, explosion_prefab.transform.rotation);
 
+        // Play explosion sound
+        AudioUtils.PlayClipAtPointToMixer(explosionClip, transform.position, mixerGroup);
         // Destroy the rocket upon collision
         Destroy(gameObject);
     }
