@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112784661286808285}
   - component: {fileID: 7662470355949183003}
+  - component: {fileID: 9143623645118465100}
   m_Layer: 0
   m_Name: WaveSpawner
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630114819626967707}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 601697a96ba81024d929ffbf77b4e605, type: 3}
   m_Name: 
@@ -63,6 +64,36 @@ MonoBehaviour:
   - {fileID: 544522015893541069}
   - {fileID: 5157925581251359098}
   waveDuration: 30
+--- !u!114 &9143623645118465100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630114819626967707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176aedb9d96e4c14bb5fdaecaf54d51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 7767145766211966913}
+  - {fileID: 1390594207833862119}
+  - {fileID: 4739555131935133568}
+  - {fileID: 3160278042841200982}
+  - {fileID: 544522015893541069}
+  - {fileID: 5157925581251359098}
+  enemies:
+  - data: {fileID: 11400000, guid: fe676f586c4904343a6043356eb57755, type: 2}
+    currentWeight: 0
+  - data: {fileID: 11400000, guid: 454c19a954108cd4797dfac11634dbe6, type: 2}
+    currentWeight: 0
+  - data: {fileID: 11400000, guid: d673763ef3beb8b4b8dd49042480a5a7, type: 2}
+    currentWeight: 0
+  initialSpawnInterval: 1.5
+  minSpawnInterval: 0.5
+  spawnIntervalDecreaseRate: 0.05
+  difficultyIncreaseInterval: 5
 --- !u!1 &1397703629496574103
 GameObject:
   m_ObjectHideFlags: 0
