@@ -74,7 +74,9 @@ public class PlayerStats : MonoBehaviour
             AudioUtils.PlayClipAtPointToMixer(levelUpSound, transform.position, mixerGroup);
 
             // Increase XP requirement for next level (scaling)
-            xpToNextLevel += 50;
+            //xpToNextLevel += 10;
+            //Exactly 10 more xp each level
+            xpToNextLevel = 100 + (level - 1) * 10;
 
             // Track the total XP needed to reach this level
             maxXP += xpToNextLevel;
