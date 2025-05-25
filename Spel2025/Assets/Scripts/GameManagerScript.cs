@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GameManagerScript : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject levelUpScreen;
     public static GameManagerScript Instance;
+
+    [SerializeField] TextMeshProUGUI timerText;
+    private float elapsedTime;
 
     public static bool isPaused;
 
@@ -61,6 +65,12 @@ public class GameManagerScript : MonoBehaviour
             }
         }
 
+        // update timer with previous frame time each frame
+        elapsedTime += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     public void ResetAllUpgrades() 
