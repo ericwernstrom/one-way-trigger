@@ -33,6 +33,10 @@ public class GravityBullet_script : MonoBehaviour
     {
         //Gravity();
     }
+
+    // Get Current level of damage
+    public static int GetCurrentGravityLevel() => currentLevel;
+    //Upgrade gravity damage
     public static void DamageUpgrade()
     {
         if (currentLevel < maxLevel)
@@ -42,7 +46,7 @@ public class GravityBullet_script : MonoBehaviour
         }
         
     }
-
+    //reset gravity damage to default values
     public static void ResetUpgrade()
     {
         currentLevel = 0;

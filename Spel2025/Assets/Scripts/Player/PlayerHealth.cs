@@ -39,6 +39,10 @@ public class PlayerHealth : MonoBehaviour
         hit_sound = audioSource.clip;
     }
 
+    //Get Current level of health
+    public int CurrentHealthLevel() => currentHealthLevel;
+
+
     // Method to decrease health
     public void TakeDamage(int damage)
     {

@@ -34,11 +34,15 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private AudioMixerGroup mixerGroup;
 
+    //get current explosion level
+    public static int GetExplosionCurrentLevel() => explosionCurrentLevel;
+
+    //Upgrade explosion scale
     public static void ExplosionScaleUpgrade() 
     { 
-        explosionCurrentLevel++;
         if (explosionCurrentLevel < explosionMaxLevel)
         {
+            explosionCurrentLevel++;
             Rocket_script.explosionScale += 1f;
             Grenade.explosionScale += 1f;
             StickyBomb.explosionScale += 1f;

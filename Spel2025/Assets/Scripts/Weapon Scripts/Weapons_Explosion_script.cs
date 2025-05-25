@@ -37,6 +37,10 @@ public class Weapons_Explosion_script : MonoBehaviour
 
     }
 
+    //explosion level
+    public static int GetCurrentExplosionDamageLevel() => currentLevel;
+
+    //Upgrade explosion damage and knockback
     public static void ExplosionLevelUp()
     {
         if (currentLevel < maxLevel)
@@ -48,7 +52,7 @@ public class Weapons_Explosion_script : MonoBehaviour
             max_knockback += 5f;
         }
     }
-
+    //Reset explosion damage and knockback to default values
     public static void ResetUpgrade()
     {
         currentLevel = 0;

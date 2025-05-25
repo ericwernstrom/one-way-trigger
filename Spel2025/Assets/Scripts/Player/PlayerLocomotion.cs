@@ -166,6 +166,10 @@ public class PlayerLocomotion : MonoBehaviour
         }
     }
 
+    //get speed level
+    public int GetCurrentSpeedLevel() => currentSpeedLevel;
+
+    //Upgrade speed
     public void SpeedUpgrade() 
     { 
         if (currentSpeedLevel < maxLevel)
