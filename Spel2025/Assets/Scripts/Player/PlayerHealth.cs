@@ -62,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
             AudioSource.PlayClipAtPoint(death_sound, transform.position);
 
             //Disable player when dead
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
 
             //Call the gameOver function from gameManager which starts the gameoverscreen
             gameManager.gameOver();

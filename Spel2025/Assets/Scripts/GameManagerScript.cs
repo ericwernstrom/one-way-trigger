@@ -84,6 +84,7 @@ public class GameManagerScript : MonoBehaviour
     public void gameOver()
     {
         gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     //Pause the game
