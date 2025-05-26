@@ -6,14 +6,17 @@ public class EnemyDamageScript : MonoBehaviour
 {
    
     [SerializeField]
-    private int damage = 20; //Kanske kan vara i ett annat script men kan nog vara här
+    private int damage = 10; //Kanske kan vara i ett annat script men kan nog vara här
 
     //Stun variables
     private bool isStunned = false;
     private float stunTimer = 0f;
     [SerializeField]
     private float stunDuration = 2f;
-    
+
+    private float damageTikTime = 0.5f;
+    private float tikTimer = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +39,7 @@ public class EnemyDamageScript : MonoBehaviour
         }
       
     }
-
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -48,7 +51,29 @@ public class EnemyDamageScript : MonoBehaviour
             }
         }
     }
+    */
 
+    private void OnCollisionStay(Collision collision)
+    {
+        tikTimer += Time.deltaTime;
+        if (tikTimer >= damageTikTime)
+        {
+            tikTimer = 0f;
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+                if (playerHealth != null)
+                {
+                    playerHealth.TakeDamage(damage);
+                }
+            }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        tikTimer = damageTikTime;
+    }
 
     public void Stun(float duration)
     {
