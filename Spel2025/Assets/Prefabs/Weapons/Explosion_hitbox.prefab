@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0660eb44cc87d94438237a08aec251f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_damage: 30
-  min_damage: 15
+  max_damage: 20
+  min_damage: 10
   max_knockback: 1000
   min_knockback: 300

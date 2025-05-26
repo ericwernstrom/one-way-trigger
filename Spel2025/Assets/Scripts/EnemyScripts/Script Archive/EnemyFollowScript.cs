@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class EnemyFollowScript : MonoBehaviour
@@ -15,7 +16,7 @@ public class EnemyFollowScript : MonoBehaviour
     private float stunTimer = 0f;
     [SerializeField]
     private float stunDuration = 2f;
-    
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +62,6 @@ public class EnemyFollowScript : MonoBehaviour
         }
 
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -73,7 +73,6 @@ public class EnemyFollowScript : MonoBehaviour
             }
         }
     }
-
 
     public void Stun(float duration)
     {
