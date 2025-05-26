@@ -41,7 +41,7 @@ public class GravityBullet_script : MonoBehaviour
     {
         if (currentLevel < maxLevel)
         {
-            damage += 4f;
+            damage += 5f;
             currentLevel++;
         }
         
