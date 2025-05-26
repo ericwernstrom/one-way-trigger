@@ -191,9 +191,9 @@ MonoBehaviour:
   - {fileID: 2552514823303913206, guid: 92e8251a2bd227d4aa3f0227f7161392, type: 3}
   rate_of_fire: 0
   size_of_projectile: 0.4
-  speed_of_projectile: 15
+  speed_of_projectile: 50
   lifetime_of_projectile: 0
-  upward_force: 6
+  upward_force: 4
 --- !u!1001 &3920819682604738467
 PrefabInstance:
   m_ObjectHideFlags: 0

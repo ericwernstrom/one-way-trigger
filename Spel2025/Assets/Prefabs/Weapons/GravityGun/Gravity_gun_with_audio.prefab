@@ -82,9 +82,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile_prefabs:
   - {fileID: 3429741208741620962, guid: dd6c7b2c4ed0246e58ba9acc882f6887, type: 3}
-  rate_of_fire: 0.2
+  rate_of_fire: 0.13
   size_of_projectile: 0
-  speed_of_projectile: 17
+  speed_of_projectile: 100
   lifetime_of_projectile: 6
   upward_force: 0
 --- !u!82 &2557618432784524962

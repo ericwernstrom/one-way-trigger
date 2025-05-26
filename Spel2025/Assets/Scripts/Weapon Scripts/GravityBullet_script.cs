@@ -11,7 +11,7 @@ public class GravityBullet_script : MonoBehaviour
     [SerializeField] private GameObject hit_particles;
 
     //Gravity bullet damage
-    [SerializeField] private static float damage = 8f;
+    [SerializeField] private static float damage = 6f;
     [SerializeField] private static int maxLevel = 5;
     [SerializeField] private static int currentLevel = 0;
 
@@ -50,7 +50,7 @@ public class GravityBullet_script : MonoBehaviour
     public static void ResetUpgrade()
     {
         currentLevel = 0;
-        damage = 8f;
+        damage = 6f;
     }
 
     private void OnTriggerStay(Collider other)

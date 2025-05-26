@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  damage: 20
+  damage: 10
   stunDuration: 2
 --- !u!136 &8422749166751528649
 CapsuleCollider:
@@ -240,6 +240,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7804170668473933686}
     m_Modifications:
+    - target: {fileID: 7169539256616817762, guid: 1c9a0e93e12bd495695db8c2eea80e7b, type: 3}
+      propertyPath: spawnInterval
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7169539256616817762, guid: 1c9a0e93e12bd495695db8c2eea80e7b, type: 3}
       propertyPath: initialUpwardSpeed
       value: 10

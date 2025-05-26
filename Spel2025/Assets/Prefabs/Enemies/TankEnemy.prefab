@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  damage: 20
+  damage: 10
   stunDuration: 2
 --- !u!136 &8475804381445070716
 CapsuleCollider:
