@@ -89104,6 +89104,10 @@ PrefabInstance:
       propertyPath: hpAmountText
       value: 
       objectReference: {fileID: 1154173217}
+    - target: {fileID: 4645567552968029555, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5988966500695006164, guid: a53211a6be64f454c935b9abc5f8827a, type: 2}
     - target: {fileID: 8199195418982267448, guid: e995d1bfc8136455fbe4bc326a05050f, type: 3}
       propertyPath: m_Name
       value: Player
